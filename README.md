@@ -20,7 +20,7 @@ En este proyecto vamos a crear una aplicación web con Vite y React consumiendo 
 
 ## Instrucciones
 <ol>
-<li> [] Lo primero que tendremos que hacer antes de empezar es generar la `API Key` en el formulario de bienvenida, ya que gracias a esta podremos realizar las peticiones <a> https://api.nasa.gov/ </a> </li>
+<li> [✅] Lo primero que tendremos que hacer antes de empezar es generar la `API Key` en el formulario de bienvenida, ya que gracias a esta podremos realizar las peticiones <a> https://api.nasa.gov/ </a> </li>
 
 <li> [] Una vez tengamos a buen recaudo nuestra API Key podremos navegar hasta la sección de APOD (Astronomic Picture of the Day), inspeccionando tanto para lo que sirve como los endpoints y las queries que nos permite realizar: <br>
 <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/826f462e-7dca-44e3-b980-91d8244bc553/Captura_de_Pantalla_2022-08-23_a_las_11.33.09.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230317T100436Z&X-Amz-Expires=86400&X-Amz-Signature=3306680d742c8be54aee80fbc0607fdfd146f61d6ee950ac3561861a90d69267&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Captura%2520de%2520Pantalla%25202022-08-23%2520a%2520las%252011.33.09.png%22&x-id=GetObject" width="400"/>
@@ -96,15 +96,21 @@ En la API de la NASA, podemos encontrar también una API muy parecida a la que h
 ## Pasos
 <ol>
 <li> [] General </li>
-[] <br>
+[✅] Borrador en Canva <br>
+[] Astronomic view <br>
+[] Rover view <br>
 
-<li> [] JAVASCRIPT </li>
+<li> [] REACT </li>
 [] <br>
 
 <li> [] HTML </li>
-[] <br>
+[] Header <br>
+[] Hero <br>
+[] Footer <br>
 
 <li> [] CSS </li>
-[] <br>
+[] Header <br>
+[] Hero <br>
+[] Footer <br>
 </ol>
 <br>
