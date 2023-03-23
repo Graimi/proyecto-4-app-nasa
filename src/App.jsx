@@ -21,6 +21,7 @@ function App() {
           <h1>PICTURE OF THE DAY</h1>
           <h3 id="rover">ROVER</h3>
           <h3 id="astronomical">ASTRONOMICAL</h3>
+          <input type="date" name="date" max="2023-03-23" min="2015-01-01" value="2023-03-23" id="date"></input>
         </article>
         <article>
           <label class="button" for="toggle">
@@ -56,7 +57,6 @@ function App() {
           <h3 id="copyright">Copyright: Roberto Marinoni</h3>
         </article>
       </div>
-
       <div id="footer">footer</div>
     </div>
   );
