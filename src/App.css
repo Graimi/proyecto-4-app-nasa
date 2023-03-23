@@ -1,45 +1,106 @@
+/* Aplicamos estilos al root */
 #root {
-  /* min-width: 100%;
-  min-height: 100%; */
+  display: flex;
+  text-align: center;
+  place-content: center;
+  /* Limitamos el tamaño para apreciar el fondo */
   width: 100%;
   height: 95vh;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
-  display: flex;
-  place-content: center;
 }
 
+/* Aplicamos estilos a la App para hacer el efecto pantalla de cristal */
 #App {
   min-width: 95%;
-  background-color: white;
   -webkit-backdrop-filter: blur(6.2px);
   backdrop-filter: blur(6.2px);
-  background: rgba(255, 255, 255, 0.514);
+  background: #ffffff81;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.24);
 }
 
+/* Aplicamos los estilos y el tamaño a la navbar */
 #navBar {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--ns__color--blue);
+  padding: 0 30px 0 30px;
   height: 20%;
-  background-color: rgba(0, 0, 0, 0.548);
+}
+
+/* Damos el mismo heigth al logo que el width del toggle para centrar todos los articles */
+#nasaLogo {
+  align-items: center;
+  height: 130px;
+  /* Reducimos el tamaño del logo para que sea presentable con este padding */
+  padding: 10px 0 10px 0;
+}
+
+/* Ponemos el display del texto rover oculto por defecto */
+#rover {
+  display: none;
+}
+
+/* Damos forma al botón para que se vea como queremos, en este caso la línea de desplazamiento */
+.button {
+  display: block;
+  width: 130px;
+  height: 40px;
+  background-color: var(--ns__color--blue);
+  border-radius: 30px;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Desaparecemos el toggle */
+#toggle {
+  display: none;
+}
+
+/* Fijamos la posición del slider al botón */
+.slider {
+  display: block;
+  position: relative;
+}
+
+/* Damos el efecto y diseños del toggle en su posición inicial */
+.slider::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 75px;
+  height: 75px;
+  background: var(--ns__color--white) no-repeat center/70%
+    url(https://res.cloudinary.com/dwsffp1eq/image/upload/v1679560050/NASA/saturno-lineal_a8jap8.png);
+  border: 10px solid var(--ns__color--blue);
+  border-radius: 50%;
+  transition: transform 0.25s ease-in;
+}
+
+/* Damos el efecto y diseños del toggle en su otra posición */
+#toggle:checked + .slider::after {
+  content: '';
+  background: var(--ns__color--white) no-repeat center/70%
+    url(https://res.cloudinary.com/dwsffp1eq/image/upload/v1679583367/NASA/rover-lineal_h5tb1d.png);
+  transform: translateX(75px) rotate(360deg);
 }
 
 #main {
+  display: flex;
+  padding: 20px;
   height: 70%;
-  background-color: rgba(0, 0, 255, 0.466);
+  border: 2px solid red;
+}
+
+#main img {
+  height: 80%;
 }
 
 #footer {
   height: 10%;
-  background-color: rgba(240, 248, 255, 0.473);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border: 2px solid red;
 }

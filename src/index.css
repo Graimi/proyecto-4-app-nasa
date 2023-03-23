@@ -1,4 +1,8 @@
 :root {
+  /* COLOR PALETTE */
+  --ns__color--blue: #0E3D91;
+  --ns__color--white: #ffff;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
