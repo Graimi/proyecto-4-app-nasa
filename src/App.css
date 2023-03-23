@@ -15,7 +15,7 @@
   min-width: 95%;
   -webkit-backdrop-filter: blur(6.2px);
   backdrop-filter: blur(6.2px);
-  background: #f0f0ff88;
+  background: #f7f7f788;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.24);
 }
@@ -39,6 +39,7 @@
   padding: 10px 0 10px 0;
 }
 
+/* Damos los estilos para el input tipo date */
 #date {
   margin-top: 7px;
   padding: 2px 4px;
@@ -46,11 +47,6 @@
   line-height: normal;
   font-family: monospace;
   font-size: large;
-  /* color: var(--ns__color--blue);
-  background-color: inherit;
-  border: 2px solid var(--ns__color--blue);
-  border-radius: 8px;
-  font-weight: 700; */
   color: var(--ns__color--white);
   background-color: var(--ns__color--blue);
   border-radius: 8px;
@@ -113,22 +109,30 @@
   padding: 20px 40px;
   height: 70%;
   gap: 30px;
-  /* border: 2px solid red; */
 }
 
+/* Damos un borde a la img para mejorar su visualización */
+/* Ver como reducir tamaño */
 #image {
   /* height: 100%; */
   border-radius: 8px;
 }
 
+/* Gracias a flex distribuimos correctamente el texto */
 #infoImage {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   text-align: justify;
+  gap: 10px;
   color: var(--ns__color--blue);
 }
 
+#details {
+  overflow: auto;
+}
+
+/* Damos los estilos al espacio de Copyright */
 #copyright {
   width: fit-content;
   padding: 5px 10px;
@@ -139,6 +143,39 @@
 }
 
 #footer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
   height: 10%;
-  border: 2px solid red;
+  padding: 0 40px;
+  gap: 20px;
+  /* border-end-end-radius: 16px; */
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  /* background-color: var(--ns__color--blue); */
+}
+
+#contact {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  width: 200px;
+  background-color: var(--ns__color--blue);
+  border-radius: 32px;
+}
+
+#contact a {
+  height: fit-content;
+  width: 15%;
+  border: 5px solid var(--ns__color--white);
+  border-radius: 100%;
+  background-color: var(--ns__color--white);
+}
+
+#circle {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  background-color: var(--ns__color--red);
 }

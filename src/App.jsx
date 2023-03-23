@@ -21,7 +21,14 @@ function App() {
           <h1>PICTURE OF THE DAY</h1>
           <h3 id="rover">ROVER</h3>
           <h3 id="astronomical">ASTRONOMICAL</h3>
-          <input type="date" name="date" max="2023-03-23" min="2015-01-01" value="2023-03-23" id="date"></input>
+          <input
+            type="date"
+            name="date"
+            max="2023-03-23"
+            min="2015-01-01"
+            value="2023-03-23"
+            id="date"
+          ></input>
         </article>
         <article>
           <label class="button" for="toggle">
@@ -38,7 +45,7 @@ function App() {
         />
         <article id="infoImage">
           <h2>Spiral Galaxy NGC 2841</h2>
-          <p>
+          <p id="details">
             A mere 46 million light-years distant, spiral galaxy NGC 2841 can be
             found in planet Earth's night sky toward the northern constellation
             of Ursa Major. This sharp image centered on the gorgeous island
@@ -57,7 +64,35 @@ function App() {
           <h3 id="copyright">Copyright: Roberto Marinoni</h3>
         </article>
       </div>
-      <div id="footer">footer</div>
+      <div id="footer">
+        <article id="contact">
+          <a href="https://github.com/Graimi" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679591861/NASA/github_qlykzr.png"
+              alt="Github"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/floreslujan/" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679591861/NASA/linkedin_gbpe7u.png"
+              alt="Linkedin"
+            />
+          </a>
+          <a href="638560723" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679591861/NASA/telefono_smjgow.png"
+              alt="Teléfono"
+            />
+          </a>
+          <a href="jaimefloreslujan@gmail.com" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679591861/NASA/email_bgpahe.png"
+              alt="Email"
+            />
+          </a>
+        </article>
+        <span id='circle'></span>
+      </div>
     </div>
   );
 }
