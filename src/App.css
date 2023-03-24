@@ -4,8 +4,8 @@
   text-align: center;
   place-content: center;
   /* Limitamos el tamaño para apreciar el fondo */
-  width: 100%;
-  height: 95vh;
+  width: 90%;
+  height: 85vh;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -14,11 +14,21 @@
 #App {
   min-width: 95%;
   -webkit-backdrop-filter: blur(6.2px);
-  backdrop-filter: blur(6.2px);
-  background: #f7f7f788;
+  content: '';
+  /* background: inherit;  */
+  /* box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
+  filter: blur(10px);
+  z-index: 0; */
+  background-color: #ffffff7c;
+  backdrop-filter: blur(10px);
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
 }
+
+/* #App::after {
+  background: inherit;
+  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
+  filter: blur(100px);
+} */
 
 /* Aplicamos los estilos y el tamaño a la navbar */
 #navBar {
@@ -29,6 +39,13 @@
   color: var(--ns__color--blue);
   padding: 0 40px;
   height: 20%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  /* background-color: var(--ns__color--light--blue); */
+  /* background-color: #d5d7de; */
+  background-color: #ffffff00;
+  backdrop-filter: blur(5px);
+  border: none;
 }
 
 /* Damos el mismo heigth al logo que el width del toggle para centrar todos los articles */
@@ -125,6 +142,7 @@
   justify-content: space-around;
   text-align: justify;
   gap: 10px;
+  font-family: 'Roboto', sans-serif;;
   color: var(--ns__color--blue);
 }
 
@@ -163,9 +181,20 @@
   width: 200px;
   background-color: var(--ns__color--blue);
   border-radius: 32px;
+  /* opacity: 0.4; */
 }
 
+/* #contact {
+  width: 120px;
+  height: 18px;
+  opacity: 0.4;
+  border-radius: 2px;
+  padding: 5px 15px;
+  border: 0;
+} */
+
 #contact a {
+  /* opacity: 1; */
   height: fit-content;
   width: 15%;
   border: 5px solid var(--ns__color--white);
@@ -174,8 +203,8 @@
 }
 
 #circle {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border-radius: 100%;
-  background-color: var(--ns__color--red);
+  background-color: var(--ns__color--light--blue);
 }

@@ -19,8 +19,8 @@ function App() {
         </article>
         <article id="navbarText">
           <h1>PICTURE OF THE DAY</h1>
-          <h3 id="rover">ROVER</h3>
-          <h3 id="astronomical">ASTRONOMICAL</h3>
+          <h2 id="rover">ROVER</h2>
+          <h2 id="astronomical">ASTRONOMICAL</h2>
           <input
             type="date"
             name="date"
