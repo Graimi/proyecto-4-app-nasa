@@ -123,7 +123,7 @@
 
 #main {
   display: flex;
-  padding: 20px 40px;
+  padding: 30px 40px 0px 40px;
   height: 70%;
   gap: 30px;
 }
@@ -165,7 +165,7 @@
   justify-content: end;
   align-items: center;
   height: 10%;
-  padding: 0 40px;
+  padding: 0 40px 20px 0;
   gap: 20px;
   /* border-end-end-radius: 16px; */
   border-bottom-left-radius: 16px;
