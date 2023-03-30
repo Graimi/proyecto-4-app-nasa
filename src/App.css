@@ -4,8 +4,7 @@
   text-align: center;
   place-content: center;
   /* Limitamos el tamaño para apreciar el fondo */
-  width: 90%;
-  height: 85vh;
+  height: 100vh;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -16,7 +15,7 @@
   -webkit-backdrop-filter: blur(px);
   content: '';
   background-color: var(--ns__color--white--blur);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(4px);
   border-radius: 16px;
 }
 
@@ -31,7 +30,7 @@
   height: 20%;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  background-color: var(--ns__color--white--blur);
+  /* background-color: var(--ns__color--white--blur); */
 }
 
 /* Damos el mismo heigth al logo que el width del toggle para centrar todos los articles */
@@ -117,7 +116,7 @@
 /* Damos los estilos al main */
 #main {
   display: flex;
-  padding: 30px 40px 0px 40px;
+  padding: 25px 40px 25px 40px;
   height: 70%;
   gap: 30px;
 }
@@ -143,6 +142,7 @@
 /* Para que no se pierda la información */
 #details {
   overflow: auto;
+  padding-right: 15px;
 }
 
 /* Damos los estilos al espacio de Copyright */
