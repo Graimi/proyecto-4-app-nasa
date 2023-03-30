@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
@@ -58,7 +59,8 @@ function App() {
           <h3 id="copyright">Copyright: Roberto Marinoni</h3>
         </article>
       </div>
-      <div id="footer">
+      {Footer()}
+      {/* <div id="footer">
         <article id="contact">
           <a href="https://github.com/Graimi" target="_blank" rel="noopener noreferrer">
             <img
@@ -90,7 +92,7 @@ function App() {
           </a>
         </article>
         <span id="circle" />
-      </div>
+      </div> */}
     </div>
   );
 }

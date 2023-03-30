@@ -1,0 +1,41 @@
+footer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 10%;
+  padding: 0 40px 20px 0;
+  gap: 20px;
+}
+
+/* Estilos  */
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  width: 200px;
+  background-color: var(--ns__color--blue);
+  border-radius: 32px;
+  /* transition: transform 2s ease-in; */
+}
+
+/* Estilamos los iconos de contacto del footer */
+.contact a {
+  width: 15%;
+  background-color: var(--ns__color--white);
+  border: 5px solid var(--ns__color--white);
+  border-radius: 100%;
+  transition: all 0.25s ease-in;
+}
+
+.contact :hover {
+  transform: scale(1.1);
+}
+
+/* Damos estilos a este círculo que hemos creado para que sea más visual el footer */
+.circleDecoration {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background-color: var(--ns__color--white);
+}
