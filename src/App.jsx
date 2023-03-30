@@ -1,44 +1,15 @@
 import React from 'react';
 import Footer from './components/Footer/Footer';
 import './App.css';
+import Header from './components/Header/Header';
 
 function App() {
+  // Usamos el siguiente useState para alternar entre las categorias de las imágenes
+  // const [toggle, setToggle] = useState('Footer');
+
   return (
     <div id="App">
-      <div id="navBar">
-        <article>
-          <a
-            href="https://apod.nasa.gov/apod/astropix.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              id="nasaLogo"
-              src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679560050/NASA/NASA_LOGO_tobb6c.png"
-              alt="NASA LOGO"
-            />
-          </a>
-        </article>
-        <article id="navbarText">
-          <h1>PICTURE OF THE DAY</h1>
-          <h2 id="rover">ROVER</h2>
-          <h2 id="astronomical">ASTRONOMICAL</h2>
-          <input
-            type="date"
-            name="date"
-            max="2023-03-23"
-            min="2015-01-01"
-            value="2023-03-23"
-            id="date"
-          />
-        </article>
-        <article>
-          <label className="button" htmlFor="toggle">
-            <input id="toggle" type="checkbox" />
-            <span className="slider" />
-          </label>
-        </article>
-      </div>
+      {Header()}
       <div id="main">
         <img id="image" src="https://apod.nasa.gov/apod/image/2303/NGC2841_1024.jpg" alt="APOL" />
         <article id="infoImage">
@@ -60,39 +31,6 @@ function App() {
         </article>
       </div>
       {Footer()}
-      {/* <div id="footer">
-        <article id="contact">
-          <a href="https://github.com/Graimi" target="_blank" rel="noopener noreferrer">
-            <img
-              src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679591861/NASA/github_qlykzr.png"
-              alt="Github"
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/floreslujan/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679591861/NASA/linkedin_gbpe7u.png"
-              alt="Linkedin"
-            />
-          </a>
-          <a href="638560723" target="_blank" rel="noopener noreferrer">
-            <img
-              src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679591861/NASA/telefono_smjgow.png"
-              alt="Teléfono"
-            />
-          </a>
-          <a href="jaimefloreslujan@gmail.com" target="_blank" rel="noopener noreferrer">
-            <img
-              src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679591861/NASA/email_bgpahe.png"
-              alt="Email"
-            />
-          </a>
-        </article>
-        <span id="circle" />
-      </div> */}
     </div>
   );
 }
