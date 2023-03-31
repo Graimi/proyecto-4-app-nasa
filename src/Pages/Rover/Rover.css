@@ -1,0 +1,20 @@
+.rover-div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rover-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.rover-images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rover-images img {
+    width: 50vh;
+}
