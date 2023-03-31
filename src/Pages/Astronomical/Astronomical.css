@@ -1,0 +1,47 @@
+/* Damos los estilos al main */
+.astronomical-div {
+  display: flex;
+  padding: 25px 0;
+  height: 70%;
+  gap: 25px;
+}
+
+/* Damos un borde a la img para mejorar su visualización */
+/* Ver como reducir tamaño */
+.astronomical-image {
+  border-radius: 8px;
+  /* Con esto adapatamos la imagen segun reduzca el tamaño disponible */
+  max-width: 50%;
+}
+
+/* Gracias a flex distribuimos correctamente el texto */
+.astronomical-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: justify;
+  gap: 10px;
+  color: var(--ns__color--blue);
+}
+
+.titleDate {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Para que no se pierda la información */
+.astronomical-text {
+  overflow: auto;
+  padding-right: 15px;
+}
+
+/* Damos los estilos al espacio de Copyright */
+.astronomical-copyright {
+  width: fit-content;
+  padding: 5px 10px;
+  border: 3px solid var(--ns__color--blue);
+  border-radius: 16px;
+  font-style: italic;
+  font-weight: 400;
+}

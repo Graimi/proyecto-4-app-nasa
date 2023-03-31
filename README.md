@@ -58,7 +58,7 @@ https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
   };
   ```
     
-- [] Ahora crea una constante fuera del componente con la URL de la NASA y otra con tu API key. Usarás estas constantes para luego crear una URL para consumir el endpoint GET con tu key y la fecha:
+- [✅] Ahora crea una constante fuera del componente con la URL de la NASA y otra con tu API key. Usarás estas constantes para luego crear una URL para consumir el endpoint GET con tu key y la fecha:
 
   ```jsx
   // Almacenamos en una constante la URL de la NASA
@@ -70,16 +70,16 @@ https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
   `${NASA_URL}planetary/apod?date=${date}&api_key=${NASA_API_KEY}`
   ```
 
-<li> [] Ahora tu trabajo será crear un `useEffect` en el componente App para pedir los datos APOD de la API. Analiza bien su formato y la información que llega, porque tendrás que conseguir lo siguiente: </li>
+<li> [✅] Ahora tu trabajo será crear un `useEffect` en el componente App para pedir los datos APOD de la API. Analiza bien su formato y la información que llega, porque tendrás que conseguir lo siguiente: </li>
 
 - [] Un título que diga: “Imagen astronómica del día”.
 - [] Un mensaje que diga: “Esta imagen corresponde con la fecha **{valor_de_tu_estado_date}**”.
-- [] Un input para cambiar la fecha del estado date que hiciste antes con el código que te recomendamos usar.
-- [] Un componente aparte, llámalo `Figure` o similar, que reciba props con el valor recibido de la API APOD de la NASA de forma que puedas renderizar:
-    - [] Una imagen con la imagen del día de la NASA.
-    - [] El título que tiene la imagen en la respuesta de la API.
-    - [] Una caja que contenga los detalles de la fecha y copyright que recibes en la respuesta de la API.
-    - [] Un texto con la explicación acerca de la imagen, recibirás también este valor de la API.
+- [✅] Un input para cambiar la fecha del estado date que hiciste antes con el código que te recomendamos usar.
+- [✅] Un componente aparte, llámalo `Figure` o similar, que reciba props con el valor recibido de la API APOD de la NASA de forma que puedas renderizar:
+    - [✅] Una imagen con la imagen del día de la NASA.
+    - [✅] El título que tiene la imagen en la respuesta de la API.
+    - [✅] Una caja que contenga los detalles de la fecha y copyright que recibes en la respuesta de la API.
+    - [✅] Un texto con la explicación acerca de la imagen, recibirás también este valor de la API.
 </ol>
 <br>
 
@@ -105,12 +105,12 @@ En la API de la NASA, podemos encontrar también una API muy parecida a la que h
 
 <li> [] HTML </li>
 [] Header <br>
-[] Hero <br>
+[] Main <br>
 [] Footer <br>
 
 <li> [] CSS </li>
 [] Header <br>
-[] Hero <br>
+[] Main <br>
 [] Footer <br>
 </ol>
 <br>

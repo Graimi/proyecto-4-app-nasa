@@ -1,15 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Header.css';
 
-function Header() {
-  // Con la siguiente fórmula obtenemos el día de hoy
-  const today = new Date(Date.now()).toISOString().slice(0, 10);
-
-  // Con este State setearemos la fecha que querramos elegir
-  const [date, setDate] = useState(today);
-
+function Header(props) {
   // Usamos el siguiente useState para alternar entre las categorias de las imágenes
-  const [toggle, setToggle] = useState('ASTRONOMICAL');
+  const { toggle, setToggle } = props;
 
   return (
     <div className="header">
@@ -23,20 +17,6 @@ function Header() {
       <article className="categoryInfo">
         <h1>PICTURE OF THE DAY</h1>
         <h2 className="category">{toggle}</h2>
-        <input
-          id="date"
-          type="date"
-          name="date"
-          // Con lo siguiente marcamos que no se pueda elegir una fecha superior
-          max={today}
-          min="2015-01-01"
-          // Su valor será el asignado por el state
-          value={date}
-          // Al seleccionar otra fecha recogemos el valor en el state
-          onChange={(event) => {
-            setDate(event.target.value.toLocaleString());
-          }}
-        />
       </article>
       <label className="toggle" htmlFor="toggleButton">
         <input
@@ -49,6 +29,9 @@ function Header() {
         />
         <span className="slider" />
       </label>
+      {/* Analizar lo siguiente para intentar poner todo en una página */}
+      {/* <p>{toggle === 'ASTRONOMICAL' ? apod.title : apod.img}</p> */}
+      {/* {toggle === 'ASTRONOMICAL' ? <Astronomical /> : <Rover />} */}
     </div>
   );
 
