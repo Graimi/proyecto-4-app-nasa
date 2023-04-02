@@ -14,7 +14,7 @@ function App() {
     <div id="App">
       <Header toggle={toggle} setToggle={setToggle} />
       {/* En vez del Figure he puesto lo siguiente */}
-      {toggle === 'ASTRONOMICAL' ? <Astronomical /> : <Rover />}
+      {toggle === 'ASTRONOMICAL' ? <Rover /> : <Rover />}
       {Footer()}
     </div>
   );

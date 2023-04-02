@@ -84,3 +84,25 @@
     url(https://res.cloudinary.com/dwsffp1eq/image/upload/v1679583367/NASA/rover-lineal_h5tb1d.png);
   transform: translateX(75px) rotate(360deg);
 }
+
+/* TABLET DISPLAY */
+@media screen and (min-width: 376px) and (max-width: 1000px) {
+  .header {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    height: auto;
+  }
+
+  .categoryInfo {
+    order: 2;
+  }
+}
+
+/* MOBILE DISPLAY */
+@media screen and (max-width: 376px) {
+  .categoryInfo {
+    order: -1;
+  }
+}

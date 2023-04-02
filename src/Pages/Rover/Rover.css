@@ -1,20 +1,50 @@
 .rover-div {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .rover-info {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     gap: 20px;
+    width: 50vh;
 }
 
 .rover-images {
     display: flex;
     justify-content: space-between;
+    width: 50vh;
 }
 
 .rover-images img {
     width: 50vh;
 }
+
+#date {
+    height: fit-content;
+    width: fit-content;
+}
+
+/* TABLET DISPLAY */
+@media screen and (min-width: 376px) and (max-width: 1000px) {
+    .rover-div {
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      /* height: auto; */
+    }
+  
+    .rover-info {
+      order: 2;
+    }
+  }
+  
+  /* MOBILE DISPLAY */
+  @media screen and (max-width: 376px) {
+    .categoryInfo {
+      order: -1;
+    }
+  }

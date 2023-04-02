@@ -16,7 +16,7 @@ function Astronomical() {
   const NASA_API_KEY = 'ENHD26eDky4QauvQ34xDNZwGCJvbAS3wZgusn6iS';
 
   // Creamos la URL para la APOD
-  const ApodUrl = `${NASA_URL}planetary/apod?date=${date}&api_key=${NASA_API_KEY}`;
+  // const ApodUrl = `${NASA_URL}planetary/apod?date=${date}&api_key=${NASA_API_KEY}`;
 
   const [apod, setApod] = useState({});
 

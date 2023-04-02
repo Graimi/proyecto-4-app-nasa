@@ -5,7 +5,6 @@
   place-content: center;
   /* Limitamos el tamaño para apreciar el fondo */
   height: 100vh;
-  min-width: 768px;
   margin: 0 auto;
   padding: 2rem;
   color: var(--ns__color--blue);
