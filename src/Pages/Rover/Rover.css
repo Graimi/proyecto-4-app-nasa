@@ -29,7 +29,7 @@
 }
 
 /* TABLET DISPLAY */
-@media screen and (min-width: 390px) and (max-width: 1000px) {
+@media screen and (min-width: 375px) and (max-width: 768px) {
     .rover-div {
       flex-direction: column;
       flex-wrap: wrap;
@@ -42,7 +42,7 @@
   }
   
   /* MOBILE DISPLAY */
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 375px) {
 
 
   }

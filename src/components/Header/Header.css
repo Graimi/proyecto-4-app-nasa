@@ -36,7 +36,7 @@
 /* Damos forma al botón para que se vea como queremos, en este caso la línea de desplazamiento */
 .toggle {
   display: block;
-  width: 130px;
+  width: 125px;
   height: 40px;
   background-color: var(--ns__color--blue);
   border: 2px white;
@@ -86,7 +86,7 @@
 }
 
 /* TABLET DISPLAY */
-@media screen and (min-width: 390px) and (max-width: 1000px) {
+@media screen and (min-width: 375px) and (max-width: 768px) {
   .header {
     /* flex-direction: column; */
     flex-wrap: wrap;
@@ -100,10 +100,19 @@
     /* Metemos esta flex-basis para obligar a que el item salte de linea */
     flex-basis: 300px;
   }
+
+  .nasaLogo {
+    height: 120px;
+  }
+
+  .toggle {
+    /* height: 35px; */
+    width: 125px;
+  }
 }
 
 /* MOBILE DISPLAY */
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 375px) {
 
   .header {
     flex-wrap: wrap;

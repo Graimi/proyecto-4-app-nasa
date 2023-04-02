@@ -41,7 +41,7 @@ footer {
 }
 
 /* TABLET DISPLAY */
-@media screen and (min-width: 390px) and (max-width: 1000px) {
+@media screen and (min-width: 375px) and (max-width: 768px) {
   /* Centramos el footer para que quede más vistosa la página */
   footer {
     justify-content: center;
@@ -54,7 +54,7 @@ footer {
 }
 
 /* MOBILE DISPLAY */
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 375px) {
   /* Centramos el footer para que quede más vistosa la página */
   footer {
     justify-content: center;
