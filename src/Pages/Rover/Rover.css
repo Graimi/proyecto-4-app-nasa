@@ -1,8 +1,9 @@
 .rover-div {
     display: flex;
     flex-direction: row;
-    gap: 20px;
     flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
 }
 
 .rover-info {
@@ -10,7 +11,6 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
-    width: 50vh;
 }
 
 .rover-images {
@@ -29,12 +29,11 @@
 }
 
 /* TABLET DISPLAY */
-@media screen and (min-width: 376px) and (max-width: 1000px) {
+@media screen and (min-width: 390px) and (max-width: 1000px) {
     .rover-div {
       flex-direction: column;
       flex-wrap: wrap;
       align-items: center;
-      /* height: auto; */
     }
   
     .rover-info {
@@ -43,8 +42,7 @@
   }
   
   /* MOBILE DISPLAY */
-  @media screen and (max-width: 376px) {
-    .categoryInfo {
-      order: -1;
-    }
+  @media screen and (max-width: 390px) {
+
+
   }

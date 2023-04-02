@@ -86,7 +86,7 @@
 }
 
 /* TABLET DISPLAY */
-@media screen and (min-width: 376px) and (max-width: 1000px) {
+@media screen and (min-width: 390px) and (max-width: 1000px) {
   .header {
     /* flex-direction: column; */
     flex-wrap: wrap;
@@ -97,12 +97,22 @@
 
   .categoryInfo {
     order: 2;
+    /* Metemos esta flex-basis para obligar a que el item salte de linea */
+    flex-basis: 300px;
   }
 }
 
 /* MOBILE DISPLAY */
-@media screen and (max-width: 376px) {
-  .categoryInfo {
-    order: -1;
+@media screen and (max-width: 390px) {
+
+  .header {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    height: auto;
+  }
+
+  .toggle {
+    margin: 30px;
   }
 }

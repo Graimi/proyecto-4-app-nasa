@@ -6,7 +6,7 @@
   /* Limitamos el tamaño para apreciar el fondo */
   /* height: 100vh; */
   margin: 0 auto;
-  /* padding: 0 32px; */
+  padding: 30px;
   color: var(--ns__color--blue);
 }
 
@@ -25,13 +25,13 @@
 }
 
 /* TABLET DISPLAY */
-@media screen and (min-width: 376px) and (max-width: 1000px) {
+@media screen and (min-width: 390px) and (max-width: 1000px) {
   #root {
     height: auto;
   }
 }
 
 /* MOBILE DISPLAY */
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 390px) {
 
 }
