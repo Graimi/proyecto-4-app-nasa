@@ -1,8 +1,11 @@
 /* Damos los estilos al main */
 .astronomical-div {
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
   padding: 25px 0;
-  height: 70%;
+  height: auto;
   gap: 25px;
 }
 
@@ -11,7 +14,12 @@
 .astronomical-image {
   border-radius: 8px;
   /* Con esto adapatamos la imagen segun reduzca el tamaño disponible */
-  max-width: 50%;
+  /* min-width: 50%;
+  max-height: 50vh; */
+  /* flex-grow: 2; */
+  /* width: fit-content; */
+  /* height: fit-content; */
+  
 }
 
 /* Gracias a flex distribuimos correctamente el texto */
@@ -22,12 +30,18 @@
   text-align: justify;
   gap: 10px;
   color: var(--ns__color--blue);
+  min-width: 50%;
+  /* max-width: 75vh; */
+  flex-grow: 1;
+  /* width: 60vh; */
+  max-height: 50vh;
 }
 
+/* Englobamos y diseñamos el título de la imagen y la fecha para una mejor distribución */
 .titleDate {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 /* Para que no se pierda la información */
@@ -44,4 +58,56 @@
   border-radius: 16px;
   font-style: italic;
   font-weight: 400;
+}
+
+/* TABLET DISPLAY */
+@media screen and (min-width: 375px) and (max-width: 768px) {
+
+  .astronomical-image {
+    width: 100%;
+  }
+
+  .astronomical-info {
+    align-items: center;
+    justify-content: space-around;
+    /* Damos esta medida para que no se quede tan pequeño el espacio del texto */
+    max-height: 700px;
+  }
+
+  /* En este caso cambiamos la dirección para centrar los elementos */
+  .titleDate {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .astronomical-text {
+    /* Priorizamos la altura del texto al máximo */
+    height: max-content;
+  }
+}
+
+/* MOBILE DISPLAY */
+@media screen and (max-width: 375px) {
+
+  .astronomical-image {
+    width: 100%;
+  }
+
+  .astronomical-info {
+    align-items: center;
+    justify-content: space-around;
+    /* Damos esta medida para que no se quede tan pequeño el espacio del texto */
+    max-height: 700px;
+  }
+
+  /* En este caso cambiamos la dirección para centrar los elementos */
+  .titleDate {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .astronomical-text {
+    /* Priorizamos la altura del texto al máximo */
+    height: max-content;
+  }
 }

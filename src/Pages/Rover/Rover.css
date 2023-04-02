@@ -17,10 +17,12 @@
     display: flex;
     justify-content: space-between;
     width: 50vh;
+    border-radius: 8px;
 }
 
 .rover-images img {
     width: 50vh;
+    border-radius: 8px;
 }
 
 #date {

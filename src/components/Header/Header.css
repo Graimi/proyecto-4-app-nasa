@@ -98,7 +98,7 @@
   .categoryInfo {
     order: 2;
     /* Metemos esta flex-basis para obligar a que el item salte de linea */
-    flex-basis: 300px;
+    flex-basis: 450px;
   }
 
   .nasaLogo {
@@ -122,6 +122,6 @@
   }
 
   .toggle {
-    margin: 30px;
+    margin: 30px 0;
   }
 }
