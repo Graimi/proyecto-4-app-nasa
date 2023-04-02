@@ -4,9 +4,9 @@
   text-align: center;
   place-content: center;
   /* Limitamos el tamaño para apreciar el fondo */
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 0 32px; */
   color: var(--ns__color--blue);
 }
 
@@ -17,9 +17,21 @@
   justify-content: space-between;
   min-width: 95%;
   -webkit-backdrop-filter: blur(px);
-  padding: 15px 35px;
+  padding: 10px 35px;
   background-color: var(--ns__color--white--blur);
   backdrop-filter: blur(4px);
   border-radius: 16px;
+  gap: 10px;
 }
 
+/* TABLET DISPLAY */
+@media screen and (min-width: 376px) and (max-width: 1000px) {
+  #root {
+    height: auto;
+  }
+}
+
+/* MOBILE DISPLAY */
+@media screen and (max-width: 376px) {
+
+}
