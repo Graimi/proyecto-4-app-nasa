@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 function Rover() {
   // Con la siguiente fórmula obtenemos el día de hoy
-  const today = new Date(Date.now()).toISOString().slice(0, 10);
+  // const today = new Date(Date.now()).toISOString().slice(0, 10);
 
   // Con este State setearemos la fecha que querramos elegir
   const [date, setDate] = useState('2012-08-06');
@@ -33,12 +33,12 @@ function Rover() {
       const data = await response.json();
       console.log(data);
       setGeneralInfo(data.rovers[0]);
-      setDate(generalInfo.max_date)
+      setDate(generalInfo.max_date);
       return data;
     }
 
     getRoverGeneralData();
-  }, [date]);
+  }, []);
 
   useEffect(() => {
     async function getRoverCuriosityData() {
@@ -56,7 +56,10 @@ function Rover() {
       {generalInfo.status === 'active' ? (
         <div className="rover-div">
           <article className="rover-info">
-            <h2>Nombre del Rover: {generalInfo.name}</h2>
+            <h2>
+              Nombre del Rover:
+              {generalInfo.name}
+            </h2>
             <input
               id="date"
               type="date"
