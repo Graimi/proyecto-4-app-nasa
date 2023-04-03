@@ -87,9 +87,13 @@
 
 /* TABLET DISPLAY */
 @media screen and (min-width: 375px) and (max-width: 768px) {
+.astronomical-div {
+  flex-wrap: wrap;
+}
+
   .astronomical-image {
     /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
-    max-width: none;
+    max-width: 100%;
   }
 
   .astronomical-info {
@@ -105,6 +109,7 @@
   .titleDate {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .astronomical-text {
@@ -115,9 +120,13 @@
 
 /* MOBILE DISPLAY */
 @media screen and (max-width: 375px) {
+  .astronomical-div {
+    flex-wrap: wrap;
+  }
+
   .astronomical-image {
     /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
-    max-width: none;
+    max-width: 100%;
   }
 
   .astronomical-info {
@@ -133,6 +142,7 @@
   .titleDate {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .astronomical-text {
