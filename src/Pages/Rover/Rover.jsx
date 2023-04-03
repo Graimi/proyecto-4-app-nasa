@@ -16,8 +16,9 @@ function Rover() {
   const NASA_API_KEY = 'ENHD26eDky4QauvQ34xDNZwGCJvbAS3wZgusn6iS';
 
   // Creamos la URL para la APOD
-  //   Ver como solucionar la fecha, no hay una actualizada y aparece la earth_date, comprobar el resto de apis
-  // const RoverUrl = `${NASA_URL}mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=${NASA_API_KEY}`;
+  // Ver como solucionar la fecha, no hay una actualizada y aparece la earth_date,
+  // comprobar el resto de apis
+  const RoverUrl = `${NASA_URL}mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=${NASA_API_KEY}`;
 
   const [rover, setRover] = useState({});
 
@@ -27,6 +28,7 @@ function Rover() {
         const response = await fetch(RoverUrl);
         const json = await response.json();
         setRover(json);
+        console.log(json);
         // console.log(json.photos[0].img_src);
       } catch (error) {
         console.error(error);

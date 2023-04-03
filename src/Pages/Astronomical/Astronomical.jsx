@@ -26,7 +26,6 @@ function Astronomical() {
         const response = await fetch(ApodUrl);
         const json = await response.json();
         setApod(json);
-        console.log(json);
       } catch (error) {
         console.error(error);
       }
@@ -45,6 +44,7 @@ function Astronomical() {
             src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680511407/NASA/vimeo_qc6ej5.png"
             alt="APOL"
           />
+          <p>Pincha en la imagen para acceder al video</p>
         </a>
       ) : (
         <img className="astronomical-image" src={apod.url} alt="APOL" />

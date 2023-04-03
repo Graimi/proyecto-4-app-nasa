@@ -12,7 +12,10 @@
 /* Centramos la imagen por defecto cuando aparece un video */
 .astronomical-video {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
 }
 
 /* Damos un borde a la img para mejorar su visualización */
