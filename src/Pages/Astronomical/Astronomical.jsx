@@ -26,6 +26,7 @@ function Astronomical() {
         const response = await fetch(ApodUrl);
         const json = await response.json();
         setApod(json);
+        console.log(json);
       } catch (error) {
         console.error(error);
       }
@@ -35,7 +36,19 @@ function Astronomical() {
 
   return (
     <div className="astronomical-div">
-      <img className="astronomical-image" src={apod.url} alt="APOL" />
+      {/* También aparecen video los cuales generan un problema de Cross-Origin Read Blocking
+      (CORB), por ello se ha puesto una img por defecto con el URL al video */}
+      {apod.media_type === 'video' ? (
+        <a className="astronomical-video" href={apod.url} target="_blank" rel="noopener noreferrer">
+          <img
+            className="astronomical-image"
+            src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680511407/NASA/vimeo_qc6ej5.png"
+            alt="APOL"
+          />
+        </a>
+      ) : (
+        <img className="astronomical-image" src={apod.url} alt="APOL" />
+      )}
       <article className="astronomical-info">
         <div className="titleDate">
           <h2 className="title">{apod.title}</h2>

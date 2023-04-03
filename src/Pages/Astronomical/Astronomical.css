@@ -3,10 +3,16 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding: 25px 0;
   height: auto;
   gap: 25px;
+}
+
+/* Centramos la imagen por defecto cuando aparece un video */
+.astronomical-video {
+  display: flex;
+  justify-content: center;
 }
 
 /* Damos un borde a la img para mejorar su visualización */
@@ -14,12 +20,13 @@
 .astronomical-image {
   border-radius: 8px;
   /* Con esto adapatamos la imagen segun reduzca el tamaño disponible */
-  /* min-width: 50%;
-  max-height: 50vh; */
-  /* flex-grow: 2; */
+  /* Damos un poco de cancha a que se espandan los elementos ya que las imágenes tienen diferentes tamaños */
+  max-width: 60%;
+  /* min-width: 30%; */
+  max-height: 50vh;
+  /* flex-grow: 1; */
   /* width: fit-content; */
   /* height: fit-content; */
-  
 }
 
 /* Gracias a flex distribuimos correctamente el texto */
@@ -30,18 +37,20 @@
   text-align: justify;
   gap: 10px;
   color: var(--ns__color--blue);
-  min-width: 50%;
-  /* max-width: 75vh; */
-  flex-grow: 1;
+  /* Damos un poco de cancha a que se espandan los elementos ya que las imágenes tienen diferentes tamaños */
+  max-width: 60%;
+  /* min-width: 30%; */
+  flex-grow: 2;
   /* width: 60vh; */
   max-height: 50vh;
+  /* min-width: 80px; */
 }
 
 /* Englobamos y diseñamos el título de la imagen y la fecha para una mejor distribución */
 .titleDate {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 /* Para que no se pierda la información */
@@ -60,16 +69,31 @@
   font-weight: 400;
 }
 
+/* HALF DESKTOP DISPLAY */
+/* @media screen and (min-width: 768px) and (max-width: 1000px) {
+
+.astronomical-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 25px 0;
+  height: auto;
+  gap: 25px;
+} */
+
 /* TABLET DISPLAY */
 @media screen and (min-width: 375px) and (max-width: 768px) {
-
   .astronomical-image {
-    width: 100%;
+    /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
+    max-width: none;
   }
 
   .astronomical-info {
     align-items: center;
     justify-content: space-around;
+    /* Quitamos la limitación anterior */
+    max-width: none;
     /* Damos esta medida para que no se quede tan pequeño el espacio del texto */
     max-height: 700px;
   }
@@ -88,14 +112,16 @@
 
 /* MOBILE DISPLAY */
 @media screen and (max-width: 375px) {
-
   .astronomical-image {
-    width: 100%;
+    /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
+    max-width: none;
   }
 
   .astronomical-info {
     align-items: center;
     justify-content: space-around;
+    /* Quitamos la limitación anterior */
+    max-width: none;
     /* Damos esta medida para que no se quede tan pequeño el espacio del texto */
     max-height: 700px;
   }
