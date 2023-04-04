@@ -1,3 +1,16 @@
+.astronomical-error {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  min-height: 200px;
+  gap: 20px;
+}
+
+.astronomical-error img {
+  max-height: 25vh;
+}
+
 /* Damos los estilos al main */
 .astronomical-div {
   display: flex;
@@ -87,9 +100,9 @@
 
 /* TABLET DISPLAY */
 @media screen and (min-width: 375px) and (max-width: 768px) {
-.astronomical-div {
-  flex-wrap: wrap;
-}
+  .astronomical-div {
+    flex-wrap: wrap;
+  }
 
   .astronomical-image {
     /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */

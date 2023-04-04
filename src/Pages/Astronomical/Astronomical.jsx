@@ -28,15 +28,32 @@ function Astronomical() {
         setApod(json);
       } catch (error) {
         console.error(error);
+        setApod(null);
       }
     }
     fetchData();
   }, [date]);
 
+  if (apod) {
+    return (
+      <div className="astronomical-error">
+        <img
+          src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
+          alt="Error"
+        />
+        <h2>
+          El uso de esta API demostrativa está limitado
+          <br />
+          Si ves este mensaje es porque se ha alcanzado el límite, espera unos minutos y vuelve a
+          intentarlo
+        </h2>
+      </div>
+    );
+  }
   return (
     <div className="astronomical-div">
       {/* También aparecen video los cuales generan un problema de Cross-Origin Read Blocking
-      (CORB), por ello se ha puesto una img por defecto con el URL al video */}
+  (CORB), por ello se ha puesto una img por defecto con el URL al video */}
       {apod.media_type === 'video' ? (
         <a className="astronomical-video" href={apod.url} target="_blank" rel="noopener noreferrer">
           <img
@@ -49,6 +66,7 @@ function Astronomical() {
       ) : (
         <img className="astronomical-image" src={apod.url} alt="APOL" />
       )}
+
       <article className="astronomical-info">
         <div className="titleDate">
           <h2 className="title">{apod.title}</h2>

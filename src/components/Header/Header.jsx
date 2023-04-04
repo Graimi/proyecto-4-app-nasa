@@ -3,6 +3,7 @@ import './Header.css';
 
 function Header(props) {
   // Usamos el siguiente useState para alternar entre las categorias de las imágenes
+  // eslint-disable-next-line react/prop-types
   const { toggle, setToggle } = props;
 
   return (
@@ -29,9 +30,6 @@ function Header(props) {
         />
         <span className="slider" />
       </label>
-      {/* Analizar lo siguiente para intentar poner todo en una página */}
-      {/* <p>{toggle === 'ASTRONOMICAL' ? apod.title : apod.img}</p> */}
-      {/* {toggle === 'ASTRONOMICAL' ? <Astronomical /> : <Rover />} */}
     </div>
   );
 
