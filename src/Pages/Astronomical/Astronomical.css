@@ -33,9 +33,7 @@
 }
 
 /* Damos un borde a la img para mejorar su visualización */
-/* Ver como reducir tamaño */
 .astronomical-image {
-  border-radius: 8px;
   /* Con esto adapatamos la imagen segun reduzca el tamaño disponible */
   /* Damos un poco de cancha a que se espandan los elementos ya que las imágenes tienen diferentes tamaños */
   max-width: 60%;
@@ -44,6 +42,7 @@
   /* flex-grow: 1; */
   /* width: fit-content; */
   /* height: fit-content; */
+  border-radius: 8px;
 }
 
 /* Gracias a flex distribuimos correctamente el texto */
@@ -64,15 +63,16 @@
 }
 
 /* Englobamos y diseñamos el título de la imagen y la fecha para una mejor distribución */
-.titleDate {
+.astronomical-titleDate {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-/* Para que no se pierda la información */
 .astronomical-text {
+  /* Para que no se pierda la información */
   overflow: auto;
+  /* Con este padding damos hueco a la barra de scroll */
   padding-right: 15px;
 }
 
@@ -84,85 +84,4 @@
   border-radius: 16px;
   font-style: italic;
   font-weight: 400;
-}
-
-/* HALF DESKTOP DISPLAY */
-/* @media screen and (min-width: 768px) and (max-width: 1000px) {
-
-.astronomical-div {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 25px 0;
-  height: auto;
-  gap: 25px;
-} */
-
-/* TABLET DISPLAY */
-@media screen and (min-width: 375px) and (max-width: 768px) {
-  /* Damos la propiedad wrap para que vayan saltando los elementos */
-  .astronomical-div {
-    flex-wrap: wrap;
-  }
-
-  .astronomical-image {
-    /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
-    max-width: 100%;
-  }
-
-  .astronomical-info {
-    align-items: center;
-    justify-content: space-around;
-    /* Quitamos la limitación anterior */
-    max-width: none;
-    /* Damos esta medida para que no se quede tan pequeño el espacio del texto */
-    max-height: 700px;
-  }
-
-  /* En este caso cambiamos la dirección para centrar los elementos */
-  .titleDate {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .astronomical-text {
-    /* Priorizamos la altura del texto al máximo */
-    height: max-content;
-  }
-}
-
-/* MOBILE DISPLAY */
-@media screen and (max-width: 375px) {
-  /* Damos la propiedad wrap para que vayan saltando los elementos */
-  .astronomical-div {
-    flex-wrap: wrap;
-  }
-
-  .astronomical-image {
-    /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
-    max-width: 100%;
-  }
-
-  .astronomical-info {
-    align-items: center;
-    justify-content: space-around;
-    /* Quitamos la limitación anterior */
-    max-width: none;
-    /* Damos esta medida para que no se quede tan pequeño el espacio del texto */
-    max-height: 700px;
-  }
-
-  /* En este caso cambiamos la dirección para centrar los elementos */
-  .titleDate {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .astronomical-text {
-    /* Priorizamos la altura del texto al máximo */
-    height: max-content;
-  }
 }

@@ -1,31 +1,3 @@
-// La API de Mars Rover Photos de la NASA está diseñada para recopilar datos de imágenes tomadas por los rovers
-// Perseverance, Curiosity, Opportunity y Spirit en Marte y hacerlos más fácilmente disponibles para otros desarrolladores,
-// educadores y científicos ciudadanos. Cada rover tiene su propio conjunto de fotos almacenadas en la base de datos,
-// que se pueden consultar por separado. Los resultados también se pueden filtrar por la cámara con la que se tomó la foto.
-//  Cada cámara tiene una función y perspectiva únicas
-
-// La API de Mars Rover Photos permite ver imágenes tomadas por diferentes cámaras instaladas en los rovers que exploran
-//  la superficie de Marte. Cada rover tiene varias cámaras con distintos propósitos: algunas son para la navegación y
-//  la evitación de obstáculos, otras son para la ciencia y la observación del entorno, y otras son para documentar
-//  el descenso y el aterrizaje. Las cámaras tienen diferentes características ópticas, como el campo de visión,
-//  la resolución, el enfoque y el color
-
-// In this Hubble Space Telescope image the bright, spiky stars lie in the foreground toward the heroic northern constellation
-// Perseus and well within our own Milky Way galaxy. In sharp focus beyond is UGC 2885, a giant spiral galaxy about 232 million
-// light-years distant. Some 800,000 light-years across compared to the Milky Way's diameter of 100,000 light-years or so, it has
-// around 1 trillion stars. That's about 10 times as many stars as the Milky Way. Part of an investigation to understand how galaxies
-// can grow to such enormous sizes, UGC 2885 was also part of An Interesting Voyage and astronomer Vera Rubin's pioneering study
-// of the rotation of spiral galaxies. Her work was the first to convincingly demonstrate the dominating presence of dark matter
-// in our universe.
-
-// La API de Mars Rover Photos de la NASA está diseñada para recopilar datos de imágenes tomadas por los rovers
-// Perseverance, Curiosity, Opportunity y Spirit en Marte y hacerlos más fácilmente disponibles para otros desarrolladores,
-// educadores y científicos ciudadanos. Cada rover tiene varias cámaras con distintos propósitos: algunas son para la navegación y
-//  la evitación de obstáculos, otras son para la ciencia y la observación del entorno, y otras son para documentar
-//  el descenso y el aterrizaje. Las cámaras tienen diferentes características ópticas, como el campo de visión,
-//  la resolución, el enfoque y el color.
-// Selecciona otra fecha para la imagen de otra cámara
-
 /* eslint-disable react/jsx-one-expression-per-line */
 import './Rover.css';
 import React, { useEffect, useState } from 'react';
@@ -50,8 +22,7 @@ async function getRoverCuriosityData({ roverCuriosityUrl }) {
   }
 }
 
-const roverText =
-  'La API de Mars Rover Photos de la NASA está diseñada para recopilar datos de imágenes tomadas por los rovers Perseverance, Curiosity, Opportunity y Spirit en Marte y hacerlos más fácilmente disponibles para otros desarrolladores, educadores y científicos ciudadanos. Cada rover tiene varias cámaras con distintos propósitos: algunas son para la navegación y la evitación de obstáculos, otras son para la ciencia y la observación del entorno, y otras son para documentar el descenso y el aterrizaje. Las cámaras tienen diferentes características ópticas, como el campo de visión, la resolución, el enfoque y el color. Selecciona otra fecha para la imagen de otra cámara';
+const roverText = 'La API de Mars Rover Photos de la NASA está diseñada para recopilar datos de imágenes tomadas por los rovers Perseverance, Curiosity, Opportunity y Spirit en Marte y hacerlos más fácilmente disponibles para otros desarrolladores, educadores y científicos ciudadanos. Cada rover tiene varias cámaras con distintos propósitos: algunas son para la navegación y la evitación de obstáculos, otras son para la ciencia y la observación del entorno, y otras son para documentar el descenso y el aterrizaje. Las cámaras tienen diferentes características ópticas, como el campo de visión, la resolución, el enfoque y el color. Selecciona otra fecha para la imagen de otra cámara';
 
 function Rover() {
   // ¿Por qué otro día? Las imágenes del rover van con retraso, normalmente un dia
@@ -186,15 +157,13 @@ function Rover() {
         </div>
       ) : (
         <div className="rover-div">
-          <article className="rover-camera-container">
-            <img
-              className="rover-image"
-              src={curiosityInfo[0]?.img_src}
-              alt={curiosityInfo[0]?.camera?.name}
-            />
-          </article>
+          <img
+            className="rover-image"
+            src={curiosityInfo[0]?.img_src}
+            alt={curiosityInfo[0]?.camera?.name}
+          />
           <article className="rover-info">
-            <div className="titleDate">
+            <div className="rover-titleDate">
               <h2>Rover: {generalInfo?.name}</h2>
               <input
                 id="date"
@@ -213,8 +182,8 @@ function Rover() {
                 }}
               />
             </div>
-            <h2>{curiosityInfo[0]?.camera?.full_name}</h2>
-            <p>{roverText}</p>
+            <h2 className="rover-camera-name">{curiosityInfo[0]?.camera?.full_name}</h2>
+            <p className="rover-text">{roverText}</p>
           </article>
         </div>
       )}

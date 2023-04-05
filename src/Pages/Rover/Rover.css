@@ -29,59 +29,111 @@
   gap: 25px;
 }
 
-.rover-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.rover-photographic-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-height: 60vh;
-}
-
-.rover-camera-container {
-  display: flex;
-  flex-direction: column;
-  /* width: 50vh; */
-  /* max-width: 50%; */
-  max-height: 100%;
-  /* max-height: 40vh; */
-  gap: 10px;
-  
-}
-
 .rover-image {
-  width: 50vh;
-  max-height: 100%;
+  max-width: 60%;
+  max-height: 50vh;
   border-radius: 8px;
 }
 
-#date {
-  height: fit-content;
-  width: fit-content;
+.rover-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: justify;
+  gap: 10px;
+  color: var(--ns__color--blue);
+  /* Damos un poco de cancha a que se espandan los elementos ya que las imágenes tienen diferentes tamaños */
+  max-width: 60%;
+  flex-grow: 2;
+  max-height: 50vh;
+}
+
+/* Englobamos y diseñamos el título de la imagen y la fecha para una mejor distribución */
+.rover-titleDate {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.rover-text {
+  /* Para que no se pierda la información */
+  overflow: auto;
+  /* Con este padding damos hueco a la barra de scroll */
+  padding-right: 15px;
 }
 
 /* TABLET DISPLAY */
 @media screen and (min-width: 375px) and (max-width: 768px) {
+  /* Damos la propiedad wrap para que vayan saltando los elementos */
   .rover-div {
-    flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
+  }
+
+  .rover-image {
+    /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
+    max-width: 100%;
   }
 
   .rover-info {
-    order: 2;
+    align-items: center;
+    justify-content: space-around;
+    /* Quitamos la limitación anterior */
+    max-width: none;
+    /* Damos esta medida para que no se quede tan pequeño el espacio del texto */
+    max-height: 700px;
+  }
+
+  /* En este caso cambiamos la dirección para centrar los elementos */
+  .rover-titleDate {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .rover-camera-name {
+    text-align: center;
+  }
+
+  .rover-text {
+    /* Priorizamos la altura del texto al máximo */
+    height: max-content;
   }
 }
 
 /* MOBILE DISPLAY */
 @media screen and (max-width: 375px) {
+  /* Damos la propiedad wrap para que vayan saltando los elementos */
+  .rover-div {
+    flex-wrap: wrap;
+  }
+
+  .rover-image {
+    /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
+    max-width: 100%;
+  }
+
+  .rover-info {
+    align-items: center;
+    justify-content: space-around;
+    /* Quitamos la limitación anterior */
+    max-width: none;
+    /* Damos esta medida para que no se quede tan pequeño el espacio del texto */
+    max-height: 700px;
+  }
+
+  /* En este caso cambiamos la dirección para centrar los elementos */
+  .rover-titleDate {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .rover-camera-name {
+    text-align: center;
+  }
+
+  .rover-text {
+    /* Priorizamos la altura del texto al máximo */
+    height: max-content;
+  }
 }

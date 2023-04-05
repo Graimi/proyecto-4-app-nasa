@@ -70,7 +70,7 @@ function Astronomical() {
       )}
 
       <article className="astronomical-info">
-        <div className="titleDate">
+        <div className="astronomical-titleDate">
           <h2 className="title">{apod.title}</h2>
           <input
             id="date"
