@@ -1,3 +1,4 @@
+/* Damos formato al espacio de error */
 .astronomical-error {
   display: flex;
   align-items: center;
@@ -7,6 +8,7 @@
   gap: 20px;
 }
 
+/* Dejamos estilizada la imagen fija de error */
 .astronomical-error img {
   max-height: 25vh;
 }
@@ -16,7 +18,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* flex-wrap: wrap; */
   padding: 25px 0;
   height: auto;
   gap: 25px;
@@ -100,6 +101,7 @@
 
 /* TABLET DISPLAY */
 @media screen and (min-width: 375px) and (max-width: 768px) {
+  /* Damos la propiedad wrap para que vayan saltando los elementos */
   .astronomical-div {
     flex-wrap: wrap;
   }
@@ -133,6 +135,7 @@
 
 /* MOBILE DISPLAY */
 @media screen and (max-width: 375px) {
+  /* Damos la propiedad wrap para que vayan saltando los elementos */
   .astronomical-div {
     flex-wrap: wrap;
   }

@@ -1,5 +1,30 @@
-// La API de Mars Rover Photos de la NASA está diseñada para recopilar datos de imágenes tomadas por los rovers Perseverance, Curiosity, Opportunity y Spirit en Marte y hacerlos más fácilmente disponibles para otros desarrolladores, educadores y científicos ciudadanos 1. Cada rover tiene su propio conjunto de fotos almacenadas en la base de datos, que se pueden consultar por separado. Los resultados también se pueden filtrar por la cámara con la que se tomó la foto. Cada cámara tiene una función y perspectiva únicas
-// La API de Mars Rover Photos permite ver imágenes tomadas por diferentes cámaras instaladas en los rovers que exploran la superficie de Marte12. Cada rover tiene varias cámaras con distintos propósitos: algunas son para la navegación y la evitación de obstáculos, otras son para la ciencia y la observación del entorno, y otras son para documentar el descenso y el aterrizaje23. Las cámaras tienen diferentes características ópticas, como el campo de visión, la resolución, el enfoque y el color
+// La API de Mars Rover Photos de la NASA está diseñada para recopilar datos de imágenes tomadas por los rovers
+// Perseverance, Curiosity, Opportunity y Spirit en Marte y hacerlos más fácilmente disponibles para otros desarrolladores,
+// educadores y científicos ciudadanos. Cada rover tiene su propio conjunto de fotos almacenadas en la base de datos,
+// que se pueden consultar por separado. Los resultados también se pueden filtrar por la cámara con la que se tomó la foto.
+//  Cada cámara tiene una función y perspectiva únicas
+
+// La API de Mars Rover Photos permite ver imágenes tomadas por diferentes cámaras instaladas en los rovers que exploran
+//  la superficie de Marte. Cada rover tiene varias cámaras con distintos propósitos: algunas son para la navegación y
+//  la evitación de obstáculos, otras son para la ciencia y la observación del entorno, y otras son para documentar
+//  el descenso y el aterrizaje. Las cámaras tienen diferentes características ópticas, como el campo de visión,
+//  la resolución, el enfoque y el color
+
+// In this Hubble Space Telescope image the bright, spiky stars lie in the foreground toward the heroic northern constellation
+// Perseus and well within our own Milky Way galaxy. In sharp focus beyond is UGC 2885, a giant spiral galaxy about 232 million
+// light-years distant. Some 800,000 light-years across compared to the Milky Way's diameter of 100,000 light-years or so, it has
+// around 1 trillion stars. That's about 10 times as many stars as the Milky Way. Part of an investigation to understand how galaxies
+// can grow to such enormous sizes, UGC 2885 was also part of An Interesting Voyage and astronomer Vera Rubin's pioneering study
+// of the rotation of spiral galaxies. Her work was the first to convincingly demonstrate the dominating presence of dark matter
+// in our universe.
+
+// La API de Mars Rover Photos de la NASA está diseñada para recopilar datos de imágenes tomadas por los rovers
+// Perseverance, Curiosity, Opportunity y Spirit en Marte y hacerlos más fácilmente disponibles para otros desarrolladores,
+// educadores y científicos ciudadanos. Cada rover tiene varias cámaras con distintos propósitos: algunas son para la navegación y
+//  la evitación de obstáculos, otras son para la ciencia y la observación del entorno, y otras son para documentar
+//  el descenso y el aterrizaje. Las cámaras tienen diferentes características ópticas, como el campo de visión,
+//  la resolución, el enfoque y el color.
+// Selecciona otra fecha para la imagen de otra cámara
 
 /* eslint-disable react/jsx-one-expression-per-line */
 import './Rover.css';
@@ -25,6 +50,9 @@ async function getRoverCuriosityData({ roverCuriosityUrl }) {
   }
 }
 
+const roverText =
+  'La API de Mars Rover Photos de la NASA está diseñada para recopilar datos de imágenes tomadas por los rovers Perseverance, Curiosity, Opportunity y Spirit en Marte y hacerlos más fácilmente disponibles para otros desarrolladores, educadores y científicos ciudadanos. Cada rover tiene varias cámaras con distintos propósitos: algunas son para la navegación y la evitación de obstáculos, otras son para la ciencia y la observación del entorno, y otras son para documentar el descenso y el aterrizaje. Las cámaras tienen diferentes características ópticas, como el campo de visión, la resolución, el enfoque y el color. Selecciona otra fecha para la imagen de otra cámara';
+
 function Rover() {
   // ¿Por qué otro día? Las imágenes del rover van con retraso, normalmente un dia
   // fijándolo en tres días aseguramos que tendremos una foto reciente y evitaremos
@@ -42,7 +70,7 @@ function Rover() {
   const nasaApiKey = 'ENHD26eDky4QauvQ34xDNZwGCJvbAS3wZgusn6iS';
 
   // La API del rover es más complicada, se ha dividido en dos
-  // Cpn esta primera URL se obtiene la info de todos los rovers, de aquí obtenemos el max_date
+  // Con esta primera URL se obtiene la info de todos los rovers, de aquí tb obtenemos el max_date
   const roverGeneralURL = `${nasaUrl}?api_key=${nasaApiKey}`;
 
   // Para no complicar todo demasiado se ha decidido usar solo la info del rover curiosity
@@ -61,7 +89,7 @@ function Rover() {
       .then((data) => {
         setGeneralInfo(data.rovers[0]);
         // Con este State setearemos la fecha máxima del rover
-        setDate(generalInfo.max_date);
+        // setDate(generalInfo.max_date);
       })
       .catch(() => setGeneralInfoError(true))
       .finally(() => seetGeneralInfoLoading(false));
@@ -121,30 +149,30 @@ function Rover() {
   }
 
   return (
-    <div className="rover-div">
-      <article className="rover-info">
-        <h2>Rover: {generalInfo?.name}</h2>
-        <input
-          id="date"
-          type="date"
-          name="date"
-          // El máximo no es el día de hoy porque las img se reciben con retraso,
-          // se ha obtenido el max directamente desde la API
-          max={generalInfo?.max_date}
-          min="2012-08-06"
-          // Se ha seteado previamente el valor de date para que coincida de primera
-          // con el de generalInfo.max_date
-          value={date}
-          // Al seleccionar otra fecha recogemos el valor en el state
-          onChange={(event) => {
-            setDate(event.target.value.toLocaleString());
-          }}
-        />
-      </article>
-      <article className="rover-photographic-container">
-        {/* Hay días que el rover no ha generado ninguna imagen,
+    <div>
+      {/* Hay días que el rover no ha generado ninguna imagen,
         prevenimos el incorrecto funcionamiento de ello con el siguiente código  */}
-        {curiosityInfo?.length < 1 ? (
+      {curiosityInfo?.length < 1 ? (
+        <div className="rover-div-noPhotoError">
+          <div className="titleDate">
+            <h2>Rover: {generalInfo?.name}</h2>
+            <input
+              id="date"
+              type="date"
+              name="date"
+              // El máximo no es el día de hoy porque las img se reciben con retraso,
+              // se ha obtenido el max directamente desde la API
+              max={generalInfo?.max_date}
+              min="2012-08-06"
+              // Se ha seteado previamente el valor de date para que coincida de primera
+              // con el de generalInfo.max_date
+              value={date}
+              // Al seleccionar otra fecha recogemos el valor en el state
+              onChange={(event) => {
+                setDate(event.target.value.toLocaleString());
+              }}
+            />
+          </div>
           <div className="rover-error">
             <img
               src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
@@ -155,19 +183,92 @@ function Rover() {
               Por favor elije otra
             </h2>
           </div>
-        ) : (
-          <div className="rover-camera-container">
-            <h2>{curiosityInfo[0]?.camera?.full_name}</h2>
+        </div>
+      ) : (
+        <div className="rover-div">
+          <article className="rover-camera-container">
             <img
-              className="rover-images"
+              className="rover-image"
               src={curiosityInfo[0]?.img_src}
               alt={curiosityInfo[0]?.camera?.name}
             />
-          </div>
-        )}
-      </article>
+          </article>
+          <article className="rover-info">
+            <div className="titleDate">
+              <h2>Rover: {generalInfo?.name}</h2>
+              <input
+                id="date"
+                type="date"
+                name="date"
+                // El máximo no es el día de hoy porque las img se reciben con retraso,
+                // se ha obtenido el max directamente desde la API
+                max={generalInfo?.max_date}
+                min="2012-08-06"
+                // Se ha seteado previamente el valor de date para que coincida de primera
+                // con el de generalInfo.max_date
+                value={date}
+                // Al seleccionar otra fecha recogemos el valor en el state
+                onChange={(event) => {
+                  setDate(event.target.value.toLocaleString());
+                }}
+              />
+            </div>
+            <h2>{curiosityInfo[0]?.camera?.full_name}</h2>
+            <p>{roverText}</p>
+          </article>
+        </div>
+      )}
     </div>
   );
+
+  // return (
+  //   <div className="rover-div">
+  //     <article className="rover-info">
+  //       <h2>Rover: {generalInfo?.name}</h2>
+  //       <input
+  //         id="date"
+  //         type="date"
+  //         name="date"
+  //         // El máximo no es el día de hoy porque las img se reciben con retraso,
+  //         // se ha obtenido el max directamente desde la API
+  //         max={generalInfo?.max_date}
+  //         min="2012-08-06"
+  //         // Se ha seteado previamente el valor de date para que coincida de primera
+  //         // con el de generalInfo.max_date
+  //         value={date}
+  //         // Al seleccionar otra fecha recogemos el valor en el state
+  //         onChange={(event) => {
+  //           setDate(event.target.value.toLocaleString());
+  //         }}
+  //       />
+  //     </article>
+  //     <article className="rover-photographic-container">
+  //       {/* Hay días que el rover no ha generado ninguna imagen,
+  //       prevenimos el incorrecto funcionamiento de ello con el siguiente código  */}
+  //       {curiosityInfo?.length < 1 ? (
+  //         <div className="rover-error">
+  //           <img
+  //             src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
+  //             alt="Error"
+  //           />
+  //           <h2>
+  //             No hay imágenes de esta fecha <br />
+  //             Por favor elije otra
+  //           </h2>
+  //         </div>
+  //       ) : (
+  //         <div className="rover-camera-container">
+  //           <h2>{curiosityInfo[0]?.camera?.full_name}</h2>
+  //           <img
+  //             className="rover-images"
+  //             src={curiosityInfo[0]?.img_src}
+  //             alt={curiosityInfo[0]?.camera?.name}
+  //           />
+  //         </div>
+  //       )}
+  //     </article>
+  //   </div>
+  // );
 }
 
 export default Rover;

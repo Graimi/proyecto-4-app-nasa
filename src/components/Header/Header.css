@@ -63,7 +63,7 @@
   content: '';
   position: absolute;
   top: -20px;
-  left: -2px;
+  left: -25px;
   width: 75px;
   height: 75px;
   background: var(--ns__color--white) no-repeat center/70%

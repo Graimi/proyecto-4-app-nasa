@@ -11,12 +11,22 @@
   max-height: 25vh;
 }
 
-.rover-div {
+.rover-div-noPhotoError {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-around;
-  gap: 20px;
+  height: auto;
+  gap: 25px;
+}
+
+.rover-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 25px 0;
+  height: auto;
+  gap: 25px;
 }
 
 .rover-info {
@@ -48,7 +58,7 @@
   
 }
 
-.rover-images {
+.rover-image {
   width: 50vh;
   max-height: 100%;
   border-radius: 8px;
