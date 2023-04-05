@@ -1,9 +1,9 @@
 import './App.css';
 import React, { useState } from 'react';
-import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Astronomical from './Pages/Astronomical/Astronomical';
 import Rover from './Pages/Rover/Rover';
+import Footer from './components/Footer/Footer';
 
 function App() {
   // Declaramos el useState en este archivo para poder acceder a la info para declarar

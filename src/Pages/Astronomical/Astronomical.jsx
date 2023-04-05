@@ -28,13 +28,15 @@ function Astronomical() {
         setApod(json);
       } catch (error) {
         console.error(error);
-        setApod(null);
+        setApod(error);
       }
     }
     fetchData();
   }, [date]);
 
-  if (apod) {
+  // console.log(apod);
+
+  if (apod.error) {
     return (
       <div className="astronomical-error">
         <img
