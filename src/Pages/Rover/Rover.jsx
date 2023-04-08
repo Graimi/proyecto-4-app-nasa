@@ -47,30 +47,45 @@ function Rover() {
   // Para no complicar todo demasiado se ha decidido usar solo la info del rover curiosity
   const roverCuriosityUrl = `${nasaUrl}curiosity/photos?earth_date=${date}&api_key=${nasaApiKey}`;
 
+  // Seteamos la info de la api general
   const [generalInfo, setGeneralInfo] = useState({});
+  // Seteamos el error de la api si hay, por defecto ho hay
   const [generalInfoError, setGeneralInfoError] = useState(false);
-  const [generalInfoLoading, seetGeneralInfoLoading] = useState(true);
+  // Seteamos que hasta que se cargue la info de la api aparezca la ventana de loading
+  const [generalInfoLoading, setGeneralInfoLoading] = useState(true);
 
+  // Seteamos la info de la api del rover curiosity
   const [curiosityInfo, setCuriosityInfo] = useState({});
+  // Seteamos el error de la api si hay, por defecto ho hay
   const [curiosityInfoError, setCuriosityInfoError] = useState(false);
+  // Seteamos que hasta que se cargue la info de la api aparezca la ventana de loading
   const [curiosityInfoLoading, setCuriosityInfoLoading] = useState(true);
 
   useEffect(() => {
     getRoverGeneralData({ roverGeneralURL })
       .then((data) => {
+        // Obtenemos la info de la api general
+        // El 0 corresponde al primer rover, en este caso el curiosity
         setGeneralInfo(data.rovers[0]);
         // Con este State setearemos la fecha máxima del rover
         // setDate(generalInfo.max_date);
       })
+      // Si aparece un error damos valor positivo al state
       .catch(() => setGeneralInfoError(true))
-      .finally(() => seetGeneralInfoLoading(false));
+      // Una vez se ha solventado bien la solicitud de la api se quita la ventana de loading
+      .finally(() => setGeneralInfoLoading(false));
+    // Para este caso es importante que se cargue esta info solo una vez
   }, []);
 
   useEffect(() => {
     getRoverCuriosityData({ roverCuriosityUrl })
+      // Obtenemos la info de la api del rover curiosity
       .then((data) => setCuriosityInfo(data))
+      // Si aparece un error damos valor positivo al state
       .catch(() => setCuriosityInfoError(true))
+      // Una vez se ha solventado bien la solicitud de la api se quita la ventana de loading
       .finally(() => setCuriosityInfoLoading(false));
+    // Esta info es importante que se actualice cada vez que se cambia la fecha
   }, [date]);
 
   if (generalInfoError || curiosityInfoError) {

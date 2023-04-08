@@ -85,3 +85,71 @@
   font-style: italic;
   font-weight: 400;
 }
+
+/* TABLET DISPLAY */
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  /* Damos la propiedad wrap para que vayan saltando los elementos */
+  .astronomical-div {
+    flex-wrap: wrap;
+  }
+
+  .astronomical-image {
+    /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
+    max-width: 100%;
+  }
+
+  .astronomical-info {
+    align-items: center;
+    justify-content: space-around;
+    /* Quitamos la limitación anterior */
+    max-width: none;
+    /* Damos esta medida para que no se quede tan pequeño el espacio del texto */
+    max-height: 700px;
+  }
+
+  /* En este caso cambiamos la dirección para centrar los elementos */
+  .astronomical-titleDate {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .astronomical-text {
+    /* Priorizamos la altura del texto al máximo */
+    height: max-content;
+  }
+}
+
+/* MOBILE DISPLAY */
+@media screen and (max-width: 375px) {
+  /* Damos la propiedad wrap para que vayan saltando los elementos */
+  .astronomical-div {
+    flex-wrap: wrap;
+  }
+
+  .astronomical-image {
+    /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
+    max-width: 100%;
+  }
+
+  .astronomical-info {
+    align-items: center;
+    justify-content: space-around;
+    /* Quitamos la limitación anterior */
+    max-width: none;
+    /* Damos esta medida para que no se quede tan pequeño el espacio del texto */
+    max-height: 700px;
+  }
+
+  /* En este caso cambiamos la dirección para centrar los elementos */
+  .astronomical-titleDate {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .astronomical-text {
+    /* Priorizamos la altura del texto al máximo */
+    height: max-content;
+  }
+}
