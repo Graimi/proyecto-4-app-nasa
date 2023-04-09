@@ -68,7 +68,7 @@ function Rover() {
         // El 0 corresponde al primer rover, en este caso el curiosity
         setGeneralInfo(data.rovers[0]);
         // Con este State setearemos la fecha máxima del rover
-        // setDate(generalInfo.max_date);
+        setDate(data.rovers[0].max_date);
       })
       // Si aparece un error damos valor positivo al state
       .catch(() => setGeneralInfoError(true))
