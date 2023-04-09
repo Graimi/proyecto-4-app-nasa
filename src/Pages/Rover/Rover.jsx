@@ -88,6 +88,7 @@ function Rover() {
     // Esta info es importante que se actualice cada vez que se cambia la fecha
   }, [date]);
 
+  // Invocamos el template de error si la api está saturada
   if (generalInfoError || curiosityInfoError) {
     return (
       <div className="rover-error">
@@ -105,9 +106,9 @@ function Rover() {
     );
   }
 
+  // Invocamos el template de loading si la api no se ha cargado todavía
   if (generalInfoLoading || curiosityInfoLoading) {
     return (
-      // Make a loading component
       <div className="rover-error">
         <img
           src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
@@ -118,6 +119,8 @@ function Rover() {
     );
   }
 
+  // El rover tiene un tiempo de misión determinado,
+  // cuando este haya finalizado su misión aparecerá el siguiente código
   if (generalInfo?.status !== 'active') {
     return (
       <div className="rover-error">
@@ -134,6 +137,7 @@ function Rover() {
     );
   }
 
+  // Si ha pasado el resto de los filtros da el código correcto
   return (
     <div>
       {/* Hay días que el rover no ha generado ninguna imagen,
@@ -204,55 +208,6 @@ function Rover() {
       )}
     </div>
   );
-
-  // return (
-  //   <div className="rover-div">
-  //     <article className="rover-info">
-  //       <h2>Rover: {generalInfo?.name}</h2>
-  //       <input
-  //         id="date"
-  //         type="date"
-  //         name="date"
-  //         // El máximo no es el día de hoy porque las img se reciben con retraso,
-  //         // se ha obtenido el max directamente desde la API
-  //         max={generalInfo?.max_date}
-  //         min="2012-08-06"
-  //         // Se ha seteado previamente el valor de date para que coincida de primera
-  //         // con el de generalInfo.max_date
-  //         value={date}
-  //         // Al seleccionar otra fecha recogemos el valor en el state
-  //         onChange={(event) => {
-  //           setDate(event.target.value.toLocaleString());
-  //         }}
-  //       />
-  //     </article>
-  //     <article className="rover-photographic-container">
-  //       {/* Hay días que el rover no ha generado ninguna imagen,
-  //       prevenimos el incorrecto funcionamiento de ello con el siguiente código  */}
-  //       {curiosityInfo?.length < 1 ? (
-  //         <div className="rover-error">
-  //           <img
-  //             src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
-  //             alt="Error"
-  //           />
-  //           <h2>
-  //             No hay imágenes de esta fecha <br />
-  //             Por favor elije otra
-  //           </h2>
-  //         </div>
-  //       ) : (
-  //         <div className="rover-camera-container">
-  //           <h2>{curiosityInfo[0]?.camera?.full_name}</h2>
-  //           <img
-  //             className="rover-images"
-  //             src={curiosityInfo[0]?.img_src}
-  //             alt={curiosityInfo[0]?.camera?.name}
-  //           />
-  //         </div>
-  //       )}
-  //     </article>
-  //   </div>
-  // );
 }
 
 export default Rover;

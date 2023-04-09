@@ -28,23 +28,12 @@ function Astronomical() {
   // Creamos la URL para la APOD
   const apodUrl = `${nasaUrl}planetary/apod?date=${date}&api_key=${nasaApiKey}`;
 
+  // Seteamos la info de la api apod
   const [apod, setApod] = useState({});
+  // Seteamos el error de la api si hay, por defecto ho hay
   const [apodError, setApodError] = useState(false);
+  // Seteamos que hasta que se cargue la info de la api aparezca la ventana de loading
   const [apodLoading, setApodLoading] = useState(true);
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const response = await fetch(ApodUrl);
-  //       const json = await response.json();
-  //       setApod(json);
-  //     } catch (error) {
-  //       console.error(error);
-  //       setApod(error);
-  //     }
-  //   }
-  //   fetchData();
-  // }, [date]);
 
   useEffect(() => {
     getApodData({ apodUrl })
@@ -57,7 +46,8 @@ function Astronomical() {
   // Esta info es importante que se actualice cada vez que se cambia la fecha
   }, [date]);
 
-  if (apod.error) {
+  // Invocamos el template de error si la api está saturada
+  if (apodError) {
     return (
       <div className="astronomical-error">
         <img
@@ -73,6 +63,20 @@ function Astronomical() {
       </div>
     );
   }
+
+  // Invocamos el template de loading si la api no se ha cargado todavía
+  if (apodLoading) {
+    return (
+      <div className="rover-error">
+        <img
+          src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
+          alt="Error"
+        />
+        <h2>Loading...</h2>
+      </div>
+    );
+  }
+
   return (
     <div className="astronomical-div">
       {/* También aparecen video los cuales generan un problema de Cross-Origin Read Blocking
