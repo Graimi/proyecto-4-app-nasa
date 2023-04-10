@@ -27,7 +27,7 @@ function Footer() {
             alt="Teléfono"
           />
         </a>
-        <a href="jaimefloreslujan@gmail.com" target="_blank" rel="noopener noreferrer">
+        <a href="jaimefloreslujan@gmail.com" target="_blank" rel="noopener noreferrer" onFocus="alret('Hello!')">
           <img
             src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679591861/NASA/email_bgpahe.png"
             alt="Email"

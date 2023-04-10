@@ -36,18 +36,18 @@
 /* Damos forma al botón para que se vea como queremos, en este caso la línea de desplazamiento */
 .toggle {
   display: block;
-  width: 125px;
+  width: 100px;
   height: 40px;
   background-color: var(--ns__color--blue);
   border: 2px white;
   border-radius: 30px;
   cursor: pointer;
-  padding: 0;
+  margin-right: 20px;
   box-shadow: 5px 5px 16px #0e3d914d;
 }
 
-/* Desaparecemos el toggle */
 #toggleButton {
+  /* Desaparecemos el toggle */
   display: none;
 }
 
@@ -88,7 +88,6 @@
 /* TABLET DISPLAY */
 @media screen and (min-width: 425px) and (max-width: 768px) {
   .header {
-    /* flex-direction: column; */
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
@@ -105,10 +104,6 @@
     height: 120px;
   }
 
-  .toggle {
-    /* height: 35px; */
-    width: 100px;
-  }
 }
 
 /* MOBILE DISPLAY */

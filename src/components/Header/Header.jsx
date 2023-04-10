@@ -32,12 +32,6 @@ function Header(props) {
       </label>
     </div>
   );
-
-  //   Crear usestate con astronomical y rover para que estos se cambien según el botón del toggle
-  //   Crear astronomical y rover en carpetas diferentes
-  // Hacer que con el useState además se cambie también el título y la imagen del toggle
-  // Investigar useParams() para analizar la info
-  // Cuando se haya acabado denominar los archivos app
 }
 
 export default Header;
