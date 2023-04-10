@@ -1,6 +1,7 @@
 import './Astronomical.css';
 import React, { useEffect, useState } from 'react';
-import { ErrorApi } from '../../components/Error/Error';
+import { ErrorApi } from '../../components/Error & Load/Error';
+import Loading from '../../components/Error & Load/Loading';
 
 async function getApodData({ apodUrl }) {
   try {
@@ -54,15 +55,7 @@ function Astronomical() {
 
   // Invocamos el template de loading si la api no se ha cargado todavía
   if (apodLoading) {
-    return (
-      <div className="rover-error">
-        <img
-          src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
-          alt="Error"
-        />
-        <h2>Loading...</h2>
-      </div>
-    );
+    return Loading();
   }
 
   return (

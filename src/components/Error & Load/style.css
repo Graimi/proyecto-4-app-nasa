@@ -1,5 +1,5 @@
 /* Damos formato al espacio de error */
-.error {
+.error, .loading {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -9,6 +9,6 @@
 }
 
 /* Dejamos estilizada la imagen fija de error */
-.error img {
+.error img, .loading img {
   max-height: 25vh;
 }

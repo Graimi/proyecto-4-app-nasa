@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import './Rover.css';
 import React, { useEffect, useState } from 'react';
-import { ErrorActive, ErrorApi } from '../../components/Error/Error';
+import { ErrorActive, ErrorApi } from '../../components/Error & Load/Error';
+import Loading from '../../components/Error & Load/Loading';
 
 async function getRoverGeneralData({ roverGeneralURL }) {
   try {
@@ -92,33 +93,11 @@ function Rover() {
   // Invocamos el template de error si la api está saturada
   if (generalInfoError || curiosityInfoError) {
     return ErrorApi();
-    // return (
-    //   <div className="rover-error">
-    //     <img
-    //       src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
-    //       alt="Error"
-    //     />
-    //     <h2>
-    //       El uso de esta API demostrativa está limitado
-    //       <br />
-    //       Si ves este mensaje es porque se ha alcanzado el límite, espera unos minutos y vuelve a
-    //       intentarlo
-    //     </h2>
-    //   </div>
-    // );
   }
 
   // Invocamos el template de loading si la api no se ha cargado todavía
   if (generalInfoLoading || curiosityInfoLoading) {
-    return (
-      <div className="rover-error">
-        <img
-          src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
-          alt="Error"
-        />
-        <h2>Loading...</h2>
-      </div>
-    );
+    return Loading();
   }
 
   // El rover tiene un tiempo de misión determinado,

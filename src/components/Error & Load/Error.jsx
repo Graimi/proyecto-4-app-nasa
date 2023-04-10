@@ -1,4 +1,4 @@
-import './Error.css';
+import './style.css';
 import React from 'react';
 
 export function ErrorApi() {
