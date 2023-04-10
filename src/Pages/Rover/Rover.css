@@ -1,16 +1,3 @@
-.rover-error {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: auto;
-  min-height: 200px;
-  gap: 20px;
-}
-
-.rover-error img {
-  max-height: 25vh;
-}
-
 .rover-div-noPhotoError {
   display: flex;
   flex-direction: column;

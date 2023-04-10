@@ -1,0 +1,14 @@
+/* Damos formato al espacio de error */
+.error {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  min-height: 200px;
+  gap: 20px;
+}
+
+/* Dejamos estilizada la imagen fija de error */
+.error img {
+  max-height: 25vh;
+}

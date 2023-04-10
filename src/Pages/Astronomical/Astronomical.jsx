@@ -1,5 +1,6 @@
 import './Astronomical.css';
 import React, { useEffect, useState } from 'react';
+import { ErrorApi } from '../../components/Error/Error';
 
 async function getApodData({ apodUrl }) {
   try {
@@ -48,20 +49,7 @@ function Astronomical() {
 
   // Invocamos el template de error si la api está saturada
   if (apodError) {
-    return (
-      <div className="astronomical-error">
-        <img
-          src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
-          alt="Error"
-        />
-        <h2>
-          El uso de esta API demostrativa está limitado
-          <br />
-          Si ves este mensaje es porque se ha alcanzado el límite, espera unos minutos y vuelve a
-          intentarlo
-        </h2>
-      </div>
-    );
+    return ErrorApi();
   }
 
   // Invocamos el template de loading si la api no se ha cargado todavía
@@ -81,8 +69,8 @@ function Astronomical() {
     <div className="astronomical-div">
       {/* También aparecen video los cuales generan un problema de Cross-Origin Read Blocking
   (CORB), por ello se ha puesto una img por defecto con el URL al video */}
-      {apod.media_type === 'video' ? (
-        <a className="astronomical-video" href={apod.url} target="_blank" rel="noopener noreferrer">
+      {apod?.media_type === 'video' ? (
+        <a className="astronomical-video" href={apod?.url} target="_blank" rel="noopener noreferrer">
           <img
             className="astronomical-image"
             src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680511407/NASA/vimeo_qc6ej5.png"
@@ -91,12 +79,12 @@ function Astronomical() {
           <p>Pincha en la imagen para acceder al video</p>
         </a>
       ) : (
-        <img className="astronomical-image" src={apod.url} alt="APOL" />
+        <img className="astronomical-image" src={apod?.url} alt="APOL" />
       )}
 
       <article className="astronomical-info">
         <div className="astronomical-titleDate">
-          <h2 className="title">{apod.title}</h2>
+          <h2 className="title">{apod?.title}</h2>
           <input
             id="date"
             type="date"
@@ -112,11 +100,11 @@ function Astronomical() {
             }}
           />
         </div>
-        <p className="astronomical-text">{apod.explanation}</p>
+        <p className="astronomical-text">{apod?.explanation}</p>
         <h3 className="astronomical-copyright">
           Copyright:
           {/* Copyright a veces está vacio porque es público, se tiene en cuenta */}
-          {apod.copyright ? apod.copyright : ' Public'}
+          {apod?.copyright ? apod?.copyright : ' Public'}
         </h3>
       </article>
     </div>

@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import './Rover.css';
 import React, { useEffect, useState } from 'react';
+import { ErrorActive, ErrorApi } from '../../components/Error/Error';
 
 async function getRoverGeneralData({ roverGeneralURL }) {
   try {
@@ -90,20 +91,21 @@ function Rover() {
 
   // Invocamos el template de error si la api está saturada
   if (generalInfoError || curiosityInfoError) {
-    return (
-      <div className="rover-error">
-        <img
-          src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
-          alt="Error"
-        />
-        <h2>
-          El uso de esta API demostrativa está limitado
-          <br />
-          Si ves este mensaje es porque se ha alcanzado el límite, espera unos minutos y vuelve a
-          intentarlo
-        </h2>
-      </div>
-    );
+    return ErrorApi();
+    // return (
+    //   <div className="rover-error">
+    //     <img
+    //       src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
+    //       alt="Error"
+    //     />
+    //     <h2>
+    //       El uso de esta API demostrativa está limitado
+    //       <br />
+    //       Si ves este mensaje es porque se ha alcanzado el límite, espera unos minutos y vuelve a
+    //       intentarlo
+    //     </h2>
+    //   </div>
+    // );
   }
 
   // Invocamos el template de loading si la api no se ha cargado todavía
@@ -122,19 +124,7 @@ function Rover() {
   // El rover tiene un tiempo de misión determinado,
   // cuando este haya finalizado su misión aparecerá el siguiente código
   if (generalInfo?.status !== 'active') {
-    return (
-      <div className="rover-error">
-        <img
-          src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
-          alt="Error"
-        />
-        <h2>
-          Actualmente el rover {generalInfo.name} no se encuentra activo
-          <br />
-          Puede deberse a un fallo del dispositivo o a que el Rover haya finalizado su misión
-        </h2>
-      </div>
-    );
+    return ErrorActive(generalInfo.name);
   }
 
   // Si ha pasado el resto de los filtros da el código correcto
