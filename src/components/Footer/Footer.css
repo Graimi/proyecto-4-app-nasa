@@ -7,6 +7,19 @@ footer {
   margin: 10px 0;
 }
 
+.rrss {
+  display: flex;
+  justify-content: center
+}
+
+.info-rrss {
+  position: fixed;
+  bottom: 75px;
+  padding: 5px 10px;
+  background-color: var(--ns__color--white);
+  border-radius: 32px;
+}
+
 /* Estilos  */
 .contact {
   display: flex;
@@ -30,6 +43,15 @@ footer {
 
 .contact :hover {
   transform: scale(1.1);
+}
+
+.email {
+  /* display: none; */
+/* position: sticky; */
+/* position: relative; */
+position:static;
+bottom: 80px;
+right: 9%;
 }
 
 /* Damos estilos a este círculo que hemos creado para que sea más visual el footer */
