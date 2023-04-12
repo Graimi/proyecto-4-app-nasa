@@ -1,4 +1,5 @@
-footer {
+/* Damos los estilos generales para desplegar correctamente los elementos */
+.rrss {
   display: flex;
   justify-content: end;
   align-items: center;
@@ -7,22 +8,7 @@ footer {
   margin: 10px 0;
 }
 
-.rrss {
-  display: flex;
-  justify-content: center;
-}
-
-.rrss-details {
-  position: fixed;
-  bottom: 75px;
-  padding: 5px 10px;
-  background-color: var(--ns__color--white);
-  border-radius: 32px;
-  /* translate: 20px 4rem; */
-  /* transition: all 5s ease-out; */
-}
-
-/* Estilos  */
+/* Estilos para alinear los iconos de las rrss con sus respectivos enlaces */
 .rrss-logos {
   display: flex;
   justify-content: space-evenly;
@@ -42,13 +28,8 @@ footer {
   transition: all 0.25s ease-in;
 }
 
+/* Damos el efecto para que crezcan los iconos */
 .rrss-logos a:hover {
-  transform: scale(1.1);
-  /* translate: 20px 4rem; */
-}
-
-.rrss-details:active {
-  /* translate: 20px 4rem; */
   transform: scale(1.1);
 }
 
@@ -63,7 +44,7 @@ footer {
 /* TABLET DISPLAY */
 @media screen and (min-width: 425px) and (max-width: 768px) {
   /* Centramos el footer para que quede más vistosa la página */
-  footer {
+  .rrss {
     justify-content: center;
   }
 
@@ -76,7 +57,7 @@ footer {
 /* MOBILE DISPLAY */
 @media screen and (max-width: 425px) {
   /* Centramos el footer para que quede más vistosa la página */
-  footer {
+  .rrss {
     justify-content: center;
   }
 

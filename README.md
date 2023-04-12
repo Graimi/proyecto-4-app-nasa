@@ -8,12 +8,12 @@ En este proyecto vamos a crear una aplicación web con Vite y React consumiendo 
 ## Requerimentos
 <ul>
 <li> [] Página desplegada y de fácil acceso. Así como un repositorio de Github adjunto. </li> 
-<li> [] Elemento img que muestre la imagen destacada por la NASA para hoy según su API con nombre APOD. </li>
-<li> [] Poder leer el título, descripción y datos generales de la imagen junto a ésta. </li> 
-<li> [] Encontrar un elemento input de tipo fecha que me permite seleccionar una fecha distinta a la de hoy y cambiar la imagen mostrada. </li>
+<li> [✅] Elemento img que muestre la imagen destacada por la NASA para hoy según su API con nombre APOD. </li>
+<li> [✅] Poder leer el título, descripción y datos generales de la imagen junto a ésta. </li> 
+<li> [✅] Encontrar un elemento input de tipo fecha que me permite seleccionar una fecha distinta a la de hoy y cambiar la imagen mostrada. </li>
 <li> [✅] El input debe estar limitado para que no pueda elegir una fecha mayor a la de hoy. </li> 
 <li> [✅] Si no es el caso y me permite elegir una fecha mayor, debo poder ver un mensaje en pantalla avisándome de que No hay fotografía disponible. </li> 
-<li> [] La llamada a la API no debe haber ocurrido si me permite elegir una fecha mayor a la de hoy. </li> 
+<li> [✅] La llamada a la API no debe haber ocurrido si me permite elegir una fecha mayor a la de hoy. </li> 
 <li> [] Bonus: Tengo disponible un input de tipo select que me permite elegir entre las APIs APOD y Mars Rover Photos, de forma que puedo ver imágenes de ambos casos. </li> 
 </ul>
 <br>
@@ -39,7 +39,7 @@ https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
 <li> [✅] Además de lo mencionado, recomendamos que instales `axios` para manejar la asincronía de las peticiones con esta librería, aunque la podéis realizar de las formas tradicionales que nos permite JavaScript, es decir, usando `fetch`. 
 <a href="https://axios-http.com/es/docs/intro">Link</a> </li>
 
-<li> [] Ahora que tienes todo listo, te pedimos lo siguiente: </li>
+<li> [✅] Ahora que tienes todo listo, te pedimos lo siguiente: </li>
 
 - [✅] Crea, en tu componente `App.jsx` el código necesario para recoger la fecha de hoy y guardarla en un `state`:
     
@@ -88,29 +88,33 @@ Esto es una tarea para l@s más valientes, si te ves con ganas de practicar más
 En la API de la NASA, podemos encontrar también una API muy parecida a la que has usado, pero en este caso muestra imágenes del **Mars Rover** (un robot que recorre Marte).
 <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8f8efbe0-e591-4314-8739-fd5c88af1281/Captura_de_pantalla_2023-01-24_a_las_22.34.09.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230317%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230317T102323Z&X-Amz-Expires=86400&X-Amz-Signature=819392933921d8606cf223fbcb985380ee702d0698b5252a0033c2959323f211&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Captura%2520de%2520pantalla%25202023-01-24%2520a%2520las%252022.34.09.png%22&x-id=GetObject" width="400">
 <ol>
-<li> [] Tendrás que conseguir añadir un elemento select junto al input de fechas para poder permitir al usuario seleccionar entre la API APOD o la API Mars Rovers para cargar fotos. </li>
-<li> [] Por defecto tendrás siempre APOD como la API principal, pero si seleccionas Mars Rovers cargarás la foto del día para el Mars Rovers, y cuando el input cambie mostrarás la foto de la misma. Es decir, replicarás todo el proceso anterior (reutiliza el componente y auméntalo con mas props!), creando una página muy completa y dinámica 🚀 </li>
+<li> [✅] Tendrás que conseguir añadir un elemento select junto al input de fechas para poder permitir al usuario seleccionar entre la API APOD o la API Mars Rovers para cargar fotos. </li>
+<li> [✅] Por defecto tendrás siempre APOD como la API principal, pero si seleccionas Mars Rovers cargarás la foto del día para el Mars Rovers, y cuando el input cambie mostrarás la foto de la misma. Es decir, replicarás todo el proceso anterior (reutiliza el componente y auméntalo con mas props!), creando una página muy completa y dinámica 🚀 </li>
 </ol>
 <br>
 
 ## Pasos
 <ol>
-<li> [] General </li>
+<li> [✅] General </li>
 [✅] Borrador en Canva <br>
-[] Astronomic view <br>
-[] Rover view <br>
+[✅] Astronomic view <br>
+[✅] Rover view <br>
+[✅] Elementos organizados <br>
+[] Comentarios añadidos <br>
+[] Código sobrante eliminado <br>
 
 <li> [] REACT </li>
-[] <br>
+[] Header <br>
+[] Main <br>
+[✅] Footer <br>
 
 <li> [] HTML </li>
-[] Header <br>
-[] Main <br>
-[] Footer <br>
+[] Metadatos <br>
 
 <li> [] CSS </li>
+[] Index <br>
 [] Header <br>
 [] Main <br>
-[] Footer <br>
+[✅] Footer <br>
 </ol>
 <br>
