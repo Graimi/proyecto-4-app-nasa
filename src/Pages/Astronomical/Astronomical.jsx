@@ -95,7 +95,7 @@ function Astronomical() {
         </div>
         <p className="astronomical-text">{apod?.explanation}</p>
         <h3 className="astronomical-copyright">
-          Copyright:
+          Copyright:&nbsp;
           {/* Copyright a veces está vacio porque es público, se tiene en cuenta */}
           {apod?.copyright ? apod?.copyright : ' Public'}
         </h3>

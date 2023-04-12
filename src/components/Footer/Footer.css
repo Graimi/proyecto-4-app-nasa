@@ -9,19 +9,21 @@ footer {
 
 .rrss {
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
 
-.info-rrss {
+.rrss-details {
   position: fixed;
   bottom: 75px;
   padding: 5px 10px;
   background-color: var(--ns__color--white);
   border-radius: 32px;
+  /* translate: 20px 4rem; */
+  /* transition: all 5s ease-out; */
 }
 
 /* Estilos  */
-.contact {
+.rrss-logos {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -29,11 +31,10 @@ footer {
   width: 200px;
   background-color: var(--ns__color--blue);
   border-radius: 32px;
-  /* transition: transform 2s ease-in; */
 }
 
 /* Estilamos los iconos de contacto del footer */
-.contact a {
+.rrss-logos a {
   width: 15%;
   background-color: var(--ns__color--white);
   border: 5px solid var(--ns__color--white);
@@ -41,17 +42,14 @@ footer {
   transition: all 0.25s ease-in;
 }
 
-.contact :hover {
+.rrss-logos a:hover {
   transform: scale(1.1);
+  /* translate: 20px 4rem; */
 }
 
-.email {
-  /* display: none; */
-/* position: sticky; */
-/* position: relative; */
-position:static;
-bottom: 80px;
-right: 9%;
+.rrss-details:active {
+  /* translate: 20px 4rem; */
+  transform: scale(1.1);
 }
 
 /* Damos estilos a este círculo que hemos creado para que sea más visual el footer */

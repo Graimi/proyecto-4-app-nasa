@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Footer.css';
 
 function Footer() {
-  const [rrss, setRrss] = useState(null);
+  // const [rrssDetails, setRrssDetails] = useState(null);
 
   return (
     <footer>
       <div className="rrss">
-        <p className="info-rrss" style={{ display: rrss ? 'flex' : 'none' }}>
-          {rrss}
-        </p>
-        <article className="contact">
+        {/* <p className="rrss-details" style={{ display: rrssDetails ? 'flex' : 'none' }}>
+          {rrssDetails}
+        </p> */}
+        <article className="rrss-logos">
           <a
             href="https://github.com/Graimi"
             target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={() => setRrss('Graimi')}
-            onMouseLeave={() => setRrss(null)}
+            // onMouseEnter={() => setRrssDetails('Graimi')}
+            // onMouseLeave={() => setRrssDetails(null)}
           >
             <img
               src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679591861/NASA/github_qlykzr.png"
@@ -27,8 +27,8 @@ function Footer() {
             href="https://www.linkedin.com/in/floreslujan/"
             target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={() => setRrss('floreslujan')}
-            onMouseLeave={() => setRrss(null)}
+            // onMouseEnter={() => setRrssDetails('floreslujan')}
+            // onMouseLeave={() => setRrssDetails(null)}
           >
             <img
               src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679591861/NASA/linkedin_gbpe7u.png"
@@ -36,23 +36,23 @@ function Footer() {
             />
           </a>
           <a
-            href="638560723"
+            href="https://api.whatsapp.com/send?phone=34638560723"
             target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={() => setRrss('638560723')}
-            onMouseLeave={() => setRrss(null)}
+            // onMouseEnter={() => setRrssDetails('638560723')}
+            // onMouseLeave={() => setRrssDetails(null)}
           >
             <img
-              src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679591861/NASA/telefono_smjgow.png"
+              src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1681288245/NASA/whatsapp_s2iqjh.png"
               alt="Teléfono"
             />
           </a>
           <a
-            href="jaimefloreslujan@gmail.com"
+            href="mailto:jaimefloreslujan@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={() => setRrss('jaimefloreslujan@gmail.com')}
-            onMouseLeave={() => setRrss(null)}
+            // onMouseEnter={() => setRrssDetails('jaimefloreslujan@gmail.com')}
+            // onMouseLeave={() => setRrssDetails(null)}
           >
             <img
               src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1679591861/NASA/email_bgpahe.png"
