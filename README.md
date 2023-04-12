@@ -105,7 +105,8 @@ En la API de la NASA, podemos encontrar también una API muy parecida a la que h
 
 <li> [] REACT </li>
 [] Header <br>
-[] Main <br>
+[] Astronomical <br>
+[✅] Rover <br>
 [✅] Footer <br>
 
 <li> [] HTML </li>
@@ -114,7 +115,8 @@ En la API de la NASA, podemos encontrar también una API muy parecida a la que h
 <li> [] CSS </li>
 [] Index <br>
 [] Header <br>
-[] Main <br>
+[] Astronomical <br>
+[✅] Rover <br>
 [✅] Footer <br>
 </ol>
 <br>

@@ -1,21 +1,14 @@
-.rover-div-noPhotoError {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  height: auto;
-  gap: 25px;
-}
-
+/* Damos estilos al div general del rover */
 .rover-div {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 25px 0;
   height: auto;
+  padding: 25px 0;
   gap: 25px;
 }
 
+/* A la imagen le damos unos máximos para que pueda crecer pero no se coma todo el espacio */
 .rover-image {
   max-width: 60%;
   max-height: 50vh;
@@ -23,15 +16,15 @@
 }
 
 .rover-info {
+  /* Damos forma a la distribución de la info */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   text-align: justify;
   gap: 10px;
   color: var(--ns__color--blue);
-  /* Damos un poco de cancha a que se espandan los elementos ya que las imágenes tienen diferentes tamaños */
+  /* Al texto le damos unos máximos para que pueda crecer pero no se coma todo el espacio */
   max-width: 60%;
-  flex-grow: 2;
   max-height: 50vh;
 }
 
@@ -56,8 +49,8 @@
     flex-wrap: wrap;
   }
 
+  /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
   .rover-image {
-    /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
     max-width: 100%;
   }
 
@@ -77,12 +70,13 @@
     text-align: center;
   }
 
+  /* Centramos el nombre de la cámara */
   .rover-camera-name {
     text-align: center;
   }
 
+  /* Priorizamos la altura del texto al máximo */
   .rover-text {
-    /* Priorizamos la altura del texto al máximo */
     height: max-content;
   }
 }
@@ -94,8 +88,8 @@
     flex-wrap: wrap;
   }
 
+  /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
   .rover-image {
-    /* Al declarar este max hacemos que la imagen crezca hasta su máximo sin alterar su escala */
     max-width: 100%;
   }
 
@@ -115,12 +109,13 @@
     text-align: center;
   }
 
+  /* Centramos el nombre de la cámara */
   .rover-camera-name {
     text-align: center;
   }
 
+  /* Priorizamos la altura del texto al máximo */
   .rover-text {
-    /* Priorizamos la altura del texto al máximo */
     height: max-content;
   }
 }

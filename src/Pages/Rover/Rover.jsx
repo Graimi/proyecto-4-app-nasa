@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import './Rover.css';
 import React, { useEffect, useState } from 'react';
-import { ErrorActive, ErrorApi } from '../../components/Error & Load/Error';
+import { ErrorActive, ErrorApi, ErrorDate } from '../../components/Error & Load/Error';
 import Loading from '../../components/Error & Load/Loading';
 
 async function getRoverGeneralData({ roverGeneralURL }) {
@@ -24,16 +24,11 @@ async function getRoverCuriosityData({ roverCuriosityUrl }) {
   }
 }
 
-const roverText = 'La API de Mars Rover Photos de la NASA está diseñada para recopilar datos de imágenes tomadas por los rovers Perseverance, Curiosity, Opportunity y Spirit en Marte y hacerlos más fácilmente disponibles para otros desarrolladores, educadores y científicos ciudadanos. Cada rover tiene varias cámaras con distintos propósitos: algunas son para la navegación y la evitación de obstáculos, otras son para la ciencia y la observación del entorno, y otras son para documentar el descenso y el aterrizaje. Las cámaras tienen diferentes características ópticas, como el campo de visión, la resolución, el enfoque y el color. Selecciona otra fecha para la imagen de otra cámara';
-
 function Rover() {
-  // ¿Por qué otro día? Las imágenes del rover van con retraso, normalmente un dia
-  // fijándolo en tres días aseguramos que tendremos una foto reciente y evitaremos
-  // un re-render en el caso de que decidiéramos poner el max_date real
-  const previousDay = new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
-
   // Con este State setearemos la fecha que querramos elegir
-  const [date, setDate] = useState(previousDay);
+  // De primeras se va a realizar el useEffect getRoverGeneralData el cual va a setear la fecha
+  // a la más reciente disponible, por lo que no es necesario determinar ninguna fecha concreta
+  const [date, setDate] = useState('');
 
   // Almacenamos en una constante la URL de la NASA
   const nasaUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/';
@@ -76,7 +71,7 @@ function Rover() {
       .catch(() => setGeneralInfoError(true))
       // Una vez se ha solventado bien la solicitud de la api se quita la ventana de loading
       .finally(() => setGeneralInfoLoading(false));
-    // Para este caso es importante que se cargue esta info solo una vez
+    // Para este caso es importante que se cargue esta info solo una vez y al principio
   }, []);
 
   useEffect(() => {
@@ -89,6 +84,9 @@ function Rover() {
       .finally(() => setCuriosityInfoLoading(false));
     // Esta info es importante que se actualice cada vez que se cambia la fecha
   }, [date]);
+
+  // El texto que contendrá el rover será fijo, lo incluímos aquí
+  const roverText = 'La API de Mars Rover Photos de la NASA está diseñada para recopilar datos de imágenes tomadas por los rovers Perseverance, Curiosity, Opportunity y Spirit en Marte y hacerlos más fácilmente disponibles para otros desarrolladores, educadores y científicos ciudadanos. Cada rover tiene varias cámaras con distintos propósitos: algunas son para la navegación y la evitación de obstáculos, otras son para la ciencia y la observación del entorno, y otras son para documentar el descenso y el aterrizaje. Las cámaras tienen diferentes características ópticas, como el campo de visión, la resolución, el enfoque y el color. Selecciona otra fecha para la imagen de otra cámara';
 
   // Invocamos el template de error si la api está saturada
   if (generalInfoError || curiosityInfoError) {
@@ -108,73 +106,48 @@ function Rover() {
 
   // Si ha pasado el resto de los filtros da el código correcto
   return (
-    <div>
-      {/* Hay días que el rover no ha generado ninguna imagen,
-        prevenimos el incorrecto funcionamiento de ello con el siguiente código  */}
-      {curiosityInfo?.length < 1 ? (
-        <div className="rover-div-noPhotoError">
-          <div className="titleDate">
-            <h2>Rover: {generalInfo?.name}</h2>
-            <input
-              id="date"
-              type="date"
-              name="date"
-              // El máximo no es el día de hoy porque las img se reciben con retraso,
-              // se ha obtenido el max directamente desde la API
-              max={generalInfo?.max_date}
-              min="2012-08-06"
-              // Se ha seteado previamente el valor de date para que coincida de primera
-              // con el de generalInfo.max_date
-              value={date}
-              // Al seleccionar otra fecha recogemos el valor en el state
-              onChange={(event) => {
-                setDate(event.target.value.toLocaleString());
-              }}
-            />
-          </div>
-          <div className="rover-error">
-            <img
-              src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
-              alt="Error"
-            />
-            <h2>
-              No hay imágenes de esta fecha <br />
-              Por favor elije otra
-            </h2>
-          </div>
-        </div>
-      ) : (
-        <div className="rover-div">
-          <img
-            className="rover-image"
-            src={curiosityInfo[0]?.img_src}
-            alt={curiosityInfo[0]?.camera?.name}
+    <div
+      className="rover-div"
+      // Hay días que el rover no ha generado ninguna imagen, dándose un array vacio
+      // cambiamos la distribución de los elementos cuando sucede con el siguiente código
+      style={{ flexDirection: curiosityInfo?.length < 1 ? 'column' : 'row' }}
+    >
+      <img
+        className="rover-image"
+        src={curiosityInfo[0]?.img_src}
+        alt={curiosityInfo[0]?.camera?.name}
+      />
+      <article className="rover-info">
+        <div className="rover-titleDate">
+          <h2>Rover: {generalInfo?.name}</h2>
+          <input
+            id="date"
+            type="date"
+            name="date"
+            // El máximo no es el día de hoy porque las img se reciben con retraso,
+            // se ha obtenido el max directamente desde la API
+            max={generalInfo?.max_date}
+            // Declaramos como fecha mínima el día de aterrizaje
+            min={generalInfo?.landing_date}
+            // Se ha seteado previamente el valor de date para que coincida de primera
+            // con el de generalInfo.max_date
+            value={date}
+            // Al seleccionar otra fecha recogemos el valor en el state
+            onChange={(event) => {
+              setDate(event.target.value.toLocaleString());
+            }}
           />
-          <article className="rover-info">
-            <div className="rover-titleDate">
-              <h2>Rover: {generalInfo?.name}</h2>
-              <input
-                id="date"
-                type="date"
-                name="date"
-                // El máximo no es el día de hoy porque las img se reciben con retraso,
-                // se ha obtenido el max directamente desde la API
-                max={generalInfo?.max_date}
-                min="2012-08-06"
-                // Se ha seteado previamente el valor de date para que coincida de primera
-                // con el de generalInfo.max_date
-                value={date}
-                // Al seleccionar otra fecha recogemos el valor en el state
-                onChange={(event) => {
-                  setDate(event.target.value.toLocaleString());
-                }}
-              />
-            </div>
+        </div>
+        {/* En el caso que no hay imagen para ese día damos un template diferente al bueno */}
+        {curiosityInfo?.length < 1 ? (
+          ErrorDate()
+        ) : (
+          <div>
             <h2 className="rover-camera-name">{curiosityInfo[0]?.camera?.full_name}</h2>
             <p className="rover-text">{roverText}</p>
-          </article>
-        </div>
-      )}
+          </div>
+        )}
+      </article>
     </div>
   );
 }
