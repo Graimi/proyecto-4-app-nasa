@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { ErrorActive, ErrorApi, ErrorDate } from '../../components/Error & Load/Error';
 import Loading from '../../components/Error & Load/Loading';
 
+// Creamos las funciones base para llamar a las apis
+
 async function getRoverGeneralData({ roverGeneralURL }) {
   try {
     const response = await fetch(roverGeneralURL);

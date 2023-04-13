@@ -28,8 +28,8 @@
   transition: all 0.25s ease-in;
 }
 
-/* Damos el efecto para que crezcan los iconos */
 .rrss-logos a:hover {
+  /* Damos el efecto para que crezcan los iconos */
   transform: scale(1.1);
 }
 
@@ -43,26 +43,26 @@
 
 /* TABLET DISPLAY */
 @media screen and (min-width: 425px) and (max-width: 768px) {
-  /* Centramos el footer para que quede más vistosa la página */
   .rrss {
+    /* Centramos el footer para que quede más vistosa la página */
     justify-content: center;
   }
 
-  /* Eliminamos el círculo para que quede más vistosa la página */
   .circleDecoration {
+    /* Eliminamos el círculo para que quede más vistosa la página */
     display: none;
   }
 }
 
 /* MOBILE DISPLAY */
 @media screen and (max-width: 425px) {
-  /* Centramos el footer para que quede más vistosa la página */
   .rrss {
+    /* Centramos el footer para que quede más vistosa la página */
     justify-content: center;
   }
 
-  /* Eliminamos el círculo para que quede más vistosa la página */
   .circleDecoration {
+    /* Eliminamos el círculo para que quede más vistosa la página */
     display: none;
   }
 }

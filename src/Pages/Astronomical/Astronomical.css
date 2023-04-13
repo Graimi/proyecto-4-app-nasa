@@ -3,8 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 25px 0;
   height: auto;
+  padding: 25px 0;
   gap: 25px;
 }
 
@@ -17,34 +17,25 @@
   height: 100%;
 }
 
-/* Damos un borde a la img para mejorar su visualización */
 .astronomical-image {
-  /* Con esto adapatamos la imagen segun reduzca el tamaño disponible */
-  /* Damos un poco de cancha a que se espandan los elementos ya que las imágenes tienen diferentes tamaños */
+  /* A la imagen le damos unos máximos para que pueda crecer pero no se coma todo el espacio */
+  /* Las imágenes tienen diferentes tamaños y con esto permitimos que se adapten */
   max-width: 60%;
-  /* min-width: 30%; */
   max-height: 50vh;
-  /* flex-grow: 1; */
-  /* width: fit-content; */
-  /* height: fit-content; */
   border-radius: 8px;
 }
 
-/* Gracias a flex distribuimos correctamente el texto */
 .astronomical-info {
+  /* Damos forma a la distribución de la info */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   text-align: justify;
   gap: 10px;
   color: var(--ns__color--blue);
-  /* Damos un poco de cancha a que se espandan los elementos ya que las imágenes tienen diferentes tamaños */
+  /* Al texto le damos unos máximos para que pueda crecer pero no se coma todo el espacio */
   max-width: 60%;
-  /* min-width: 30%; */
-  flex-grow: 2;
-  /* width: 60vh; */
   max-height: 50vh;
-  /* min-width: 80px; */
 }
 
 /* Englobamos y diseñamos el título de la imagen y la fecha para una mejor distribución */
@@ -73,8 +64,8 @@
 
 /* TABLET DISPLAY */
 @media screen and (min-width: 425px) and (max-width: 768px) {
-  /* Damos la propiedad wrap para que vayan saltando los elementos */
   .astronomical-div {
+    /* Damos la propiedad wrap para que vayan saltando los elementos */
     flex-wrap: wrap;
   }
 
@@ -92,8 +83,8 @@
     max-height: 700px;
   }
 
-  /* En este caso cambiamos la dirección para centrar los elementos */
   .astronomical-titleDate {
+    /* En este caso cambiamos la dirección para centrar los elementos */
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -107,8 +98,8 @@
 
 /* MOBILE DISPLAY */
 @media screen and (max-width: 425px) {
-  /* Damos la propiedad wrap para que vayan saltando los elementos */
   .astronomical-div {
+    /* Damos la propiedad wrap para que vayan saltando los elementos */
     flex-wrap: wrap;
   }
 
@@ -126,8 +117,8 @@
     max-height: 700px;
   }
 
-  /* En este caso cambiamos la dirección para centrar los elementos */
   .astronomical-titleDate {
+    /* En este caso cambiamos la dirección para centrar los elementos */
     flex-direction: column;
     align-items: center;
     text-align: center;

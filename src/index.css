@@ -67,7 +67,6 @@ html:focus-within {
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  /* min-width: 1000px; */
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   /* Centramos el contenido del body */

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { ErrorApi } from '../../components/Error & Load/Error';
 import Loading from '../../components/Error & Load/Loading';
 
+// Creamos la función base para llamar a la api
 async function getApodData({ apodUrl }) {
   try {
     const response = await fetch(apodUrl);
@@ -66,12 +67,14 @@ function Astronomical() {
         <a className="astronomical-video" href={apod?.url} target="_blank" rel="noopener noreferrer">
           <img
             className="astronomical-image"
+            // Los videos están almacenados en Vimeo, por eso se pone como img el logo de esta web
             src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680511407/NASA/vimeo_qc6ej5.png"
             alt="APOL"
           />
           <p>Pincha en la imagen para acceder al video</p>
         </a>
       ) : (
+        // En el casio que no haya video se muestra la imagen
         <img className="astronomical-image" src={apod?.url} alt="APOL" />
       )}
 
