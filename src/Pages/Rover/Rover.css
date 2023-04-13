@@ -36,6 +36,21 @@
   gap: 10px;
 }
 
+/* Damos los estilos para el input tipo date */
+#date {
+  margin-top: 7px;
+  padding: 2px 4px;
+  line-height: normal;
+  /* Asignamos una fuente más apropiada para el date */
+  font-family: monospace;
+  font-size: large;
+  color: var(--ns__color--white);
+  background-color: var(--ns__color--blue);
+  border-radius: 8px;
+  /* Quitamos el borde por defecto del date */
+  border: 2px solid var(--ns__color--blue);
+}
+
 .rover-text {
   /* Para que no se pierda la información */
   overflow: auto;

@@ -1,8 +1,11 @@
 import React from 'react';
 import './Header.css';
 
+// Como se pedía en el enunciado, se ha sacado el cambio entre las dos páginas por un uso
+// diferente del useState, en este caso eligiendo la pág por props dependientes del useState interno
+// que cambiará la info para visualizar las págs en la App
 function Header(props) {
-  // Usamos el siguiente useState para alternar entre las categorias de las imágenes
+  // Usamos el siguiente useState para almacenar la info obtenida del prop
   // eslint-disable-next-line react/prop-types
   const { toggle, setToggle } = props;
 
@@ -24,6 +27,7 @@ function Header(props) {
           id="toggleButton"
           type="checkbox"
           onChange={() => {
+            // Al clickar sobre este input el toggle cambiará su valor entre las páginas
             // eslint-disable-next-line no-unused-expressions
             toggle === 'ASTRONOMICAL' ? setToggle('ROVER') : setToggle('ASTRONOMICAL');
           }}

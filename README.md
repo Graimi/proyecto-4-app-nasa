@@ -104,9 +104,11 @@ En la API de la NASA, podemos encontrar también una API muy parecida a la que h
 [] Código sobrante eliminado <br>
 
 <li> [] REACT </li>
+[] App <br>
 [] Header <br>
 [✅] Astronomical <br>
 [✅] Rover <br>
+[✅] Error <br>
 [✅] Footer <br>
 
 <li> [] HTML </li>
@@ -114,8 +116,10 @@ En la API de la NASA, podemos encontrar también una API muy parecida a la que h
 
 <li> [] CSS </li>
 [] Index <br>
+[] App <br>
 [] Header <br>
 [✅] Astronomical <br>
+[✅] Rover <br>
 [✅] Rover <br>
 [✅] Footer <br>
 </ol>
