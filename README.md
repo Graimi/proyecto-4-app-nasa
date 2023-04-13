@@ -7,7 +7,7 @@ En este proyecto vamos a crear una aplicación web con Vite y React consumiendo 
 
 ## Requerimentos
 <ul>
-<li> [] Página desplegada y de fácil acceso. Así como un repositorio de Github adjunto. </li> 
+<li> [✅] Página desplegada y de fácil acceso. Así como un repositorio de Github adjunto. </li> 
 <li> [✅] Elemento img que muestre la imagen destacada por la NASA para hoy según su API con nombre APOD. </li>
 <li> [✅] Poder leer el título, descripción y datos generales de la imagen junto a ésta. </li> 
 <li> [✅] Encontrar un elemento input de tipo fecha que me permite seleccionar una fecha distinta a la de hoy y cambiar la imagen mostrada. </li>
@@ -100,13 +100,13 @@ En la API de la NASA, podemos encontrar también una API muy parecida a la que h
 [✅] Astronomic view <br>
 [✅] Rover view <br>
 [✅] Elementos organizados <br>
-[] Comentarios añadidos <br>
-[] Código sobrante eliminado <br>
+[✅] Comentarios añadidos <br>
+[✅] Código sobrante eliminado <br>
 
 <li> [✅] HTML </li>
 [✅] Metadatos <br>
 
-<li> [] REACT </li>
+<li> [✅] REACT </li>
 [✅] App <br>
 [✅] Header <br>
 [✅] Astronomical <br>
@@ -114,9 +114,9 @@ En la API de la NASA, podemos encontrar también una API muy parecida a la que h
 [✅] Error <br>
 [✅] Footer <br>
 
-<li> [] CSS </li>
-[] Index <br>
-[] App <br>
+<li> [✅] CSS </li>
+[✅] Index <br>
+[✅] App <br>
 [✅] Header <br>
 [✅] Astronomical <br>
 [✅] Rover <br>
