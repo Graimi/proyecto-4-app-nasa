@@ -103,21 +103,21 @@ En la API de la NASA, podemos encontrar también una API muy parecida a la que h
 [] Comentarios añadidos <br>
 [] Código sobrante eliminado <br>
 
+<li> [✅] HTML </li>
+[✅] Metadatos <br>
+
 <li> [] REACT </li>
-[] App <br>
-[] Header <br>
+[✅] App <br>
+[✅] Header <br>
 [✅] Astronomical <br>
 [✅] Rover <br>
 [✅] Error <br>
 [✅] Footer <br>
 
-<li> [] HTML </li>
-[] Metadatos <br>
-
 <li> [] CSS </li>
 [] Index <br>
 [] App <br>
-[] Header <br>
+[✅] Header <br>
 [✅] Astronomical <br>
 [✅] Rover <br>
 [✅] Rover <br>

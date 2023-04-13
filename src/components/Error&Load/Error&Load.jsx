@@ -3,19 +3,20 @@ import React from 'react';
 
 // Todas las templates tienen la misma img de muestra,
 // para evitar repetir código se crea lo siguiente
-const ErrorImg = (
-  <img
-    src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
-    alt="Error"
-  />
-);
+function Image(img) {
+  return <img src={img} alt="Error" />;
+}
+
+const LoadingImg = 'https://res.cloudinary.com/dwsffp1eq/image/upload/v1681379260/NASA/cargando_yejwn0.png';
+
+const ErrorImg = 'https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png';
 
 // El proceso de llamada a la API y mostrar los datos tarda un rato,
 // para evitar una mala visualización se crea este template de carga
 export function Loading() {
   return (
     <div className="loading">
-      {ErrorImg}
+      {Image(LoadingImg)}
       <h2>Loading...</h2>
     </div>
   );
@@ -26,7 +27,7 @@ export function Loading() {
 export function ErrorApi() {
   return (
     <div className="error">
-      {ErrorImg}
+      {Image(ErrorImg)}
       <h2>
         El uso de esta API demostrativa está limitado
         <br />
@@ -42,7 +43,7 @@ export function ErrorApi() {
 export function ErrorActive(name) {
   return (
     <div className="error">
-      {ErrorImg}
+      {Image(ErrorImg)}
       <h2>
         Actualmente el rover&nbsp;
         {name}
@@ -59,7 +60,7 @@ export function ErrorActive(name) {
 export function ErrorDate() {
   return (
     <div className="error">
-      {ErrorImg}
+      {Image(ErrorImg)}
       <h2>
         No hay imágenes de esta fecha&nbsp;
         <br />

@@ -58,6 +58,10 @@
   padding-right: 15px;
 }
 
+.rover-has-image {
+  height: inherit;
+}
+
 /* TABLET DISPLAY */
 @media screen and (min-width: 425px) and (max-width: 768px) {
   .rover-div {
