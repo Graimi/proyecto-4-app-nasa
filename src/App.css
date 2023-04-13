@@ -1,40 +1,31 @@
-/* Aplicamos estilos al root */
+/* Aplicamos estilos al root del proyecto */
 #root {
-  display: flex;
+  /* Organizamos los componentes */
+  /* display: flex;
   text-align: center;
-  place-content: center;
-  /* Limitamos el tamaño para apreciar el fondo */
-  /* height: 100vh; */
-  /* margin: 0 auto; */
+  place-content: center; */
+
+  /* Obligamos a aprovechar el máximo tamaño disponible */
   width: 100%;
+  /* Establecemos un mínimo de ancho enfocado a la media mobile */
   min-width: 315px;
+  /* Con este padding cremos el espacio para visualizar la app como una ventana */
   padding: 30px;
+  /* Color general para todo el contenido */
   color: var(--ns__color--blue);
 }
 
 /* Aplicamos estilos a la App para hacer el efecto pantalla de cristal */
 #App {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-width: 95%;
+  justify-content: space-between; */
+  /* min-width: 95%; */
   /* width: 150vh; */
   -webkit-backdrop-filter: blur(px);
   padding: 10px 35px;
   background-color: var(--ns__color--white--blur);
   backdrop-filter: blur(4px);
   border-radius: 16px;
-  gap: 10px;
-}
-
-/* TABLET DISPLAY */
-@media screen and (min-width: 425px) and (max-width: 768px) {
-  #root {
-    height: auto;
-  }
-}
-
-/* MOBILE DISPLAY */
-@media screen and (max-width: 425px) {
-
+  gap: 20px;
 }

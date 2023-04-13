@@ -11,9 +11,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -71,19 +68,12 @@ body {
   line-height: 1.5;
   /* Centramos el contenido del body */
   display: flex;
-  place-items: center;
   align-items: center;
+  /* Establecemos el background y le damos estilos */
   background-image: url(https://res.cloudinary.com/dwsffp1eq/image/upload/v1679655819/NASA/galaxy_2_dznuuv.jpg);
   background-size: cover ;
   background-position: 100%;
-  background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-a {
-  color: var(--ns__color--blue);
-  text-decoration-color: var(--ns__color--blue);
-  text-decoration: none;
 }
 
 /* A elements that don't have a class get default styles */

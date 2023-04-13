@@ -51,15 +51,11 @@
   border: 2px solid var(--ns__color--blue);
 }
 
-.rover-text {
+.rover-has-image {
   /* Para que no se pierda la información */
   overflow: auto;
   /* Con este padding damos hueco a la barra de scroll */
   padding-right: 15px;
-}
-
-.rover-has-image {
-  height: inherit;
 }
 
 /* TABLET DISPLAY */

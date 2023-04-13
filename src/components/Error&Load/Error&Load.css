@@ -4,9 +4,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: auto;
+  text-align: center;
   min-height: 200px;
   gap: 20px;
+  /* Establecemos este margin para que concuerde con el gap de los elementos */
+  margin-top: 20px;
 }
 
 .error img,

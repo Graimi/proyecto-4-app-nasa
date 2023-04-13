@@ -1,7 +1,9 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import './Rover.css';
 import React, { useEffect, useState } from 'react';
-import { Loading, ErrorActive, ErrorApi, ErrorDate } from '../../components/Error&Load/Error&Load';
+import {
+  Loading, ErrorActive, ErrorApi, ErrorDate,
+} from '../../components/Error&Load/Error&Load';
 
 // Creamos las funciones base para llamar a las apis
 
@@ -87,8 +89,7 @@ function Rover() {
   }, [date]);
 
   // El texto que contendrá el rover será fijo, lo incluímos aquí
-  const roverText =
-    'La API de Mars Rover Photos de la NASA está diseñada para recopilar datos de imágenes tomadas por los rovers Perseverance, Curiosity, Opportunity y Spirit en Marte y hacerlos más fácilmente disponibles para otros desarrolladores, educadores y científicos ciudadanos. Cada rover tiene varias cámaras con distintos propósitos: algunas son para la navegación y la evitación de obstáculos, otras son para la ciencia y la observación del entorno, y otras son para documentar el descenso y el aterrizaje. Las cámaras tienen diferentes características ópticas, como el campo de visión, la resolución, el enfoque y el color. Selecciona otra fecha para la imagen de otra cámara';
+  const roverText = 'La API de Mars Rover Photos de la NASA está diseñada para recopilar datos de imágenes tomadas por los rovers Perseverance, Curiosity, Opportunity y Spirit en Marte y hacerlos más fácilmente disponibles para otros desarrolladores, educadores y científicos ciudadanos. Cada rover tiene varias cámaras con distintos propósitos: algunas son para la navegación y la evitación de obstáculos, otras son para la ciencia y la observación del entorno, y otras son para documentar el descenso y el aterrizaje. Las cámaras tienen diferentes características ópticas, como el campo de visión, la resolución, el enfoque y el color. Selecciona otra fecha para la imagen de otra cámara';
 
   // Invocamos el template de error si la api está saturada
   if (generalInfoError || curiosityInfoError) {
@@ -105,9 +106,6 @@ function Rover() {
   if (generalInfo?.status !== 'active') {
     return ErrorActive(generalInfo.name);
   }
-
-  // const RoverHasImg = (<h2 className="rover-camera-name">{curiosityInfo[0]?.camera?.full_name}</h2>
-  // <p className="rover-text">{roverText}</p>)
 
   // Si ha pasado el resto de los filtros da el código correcto
   return (
