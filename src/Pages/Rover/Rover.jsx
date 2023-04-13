@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import './Rover.css';
 import React, { useEffect, useState } from 'react';
-import { ErrorActive, ErrorApi, ErrorDate } from '../../components/Error & Load/Error';
-import Loading from '../../components/Error & Load/Loading';
+import {
+  Loading, ErrorActive, ErrorApi, ErrorDate,
+} from '../../components/Error&Load/Error&Load';
 
 // Creamos las funciones base para llamar a las apis
 
@@ -101,7 +102,7 @@ function Rover() {
   }
 
   // El rover tiene un tiempo de misión determinado,
-  // cuando este haya finalizado su misión aparecerá el siguiente código
+  // cuando este haya finalizado su misión aparecerá el siguiente template
   if (generalInfo?.status !== 'active') {
     return ErrorActive(generalInfo.name);
   }

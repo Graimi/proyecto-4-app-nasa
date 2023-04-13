@@ -1,7 +1,6 @@
 import './Astronomical.css';
 import React, { useEffect, useState } from 'react';
-import { ErrorApi } from '../../components/Error & Load/Error';
-import Loading from '../../components/Error & Load/Loading';
+import { Loading, ErrorApi } from '../../components/Error&Load/Error&Load';
 
 // Creamos la función base para llamar a la api
 async function getApodData({ apodUrl }) {
@@ -46,7 +45,7 @@ function Astronomical() {
       .catch(() => setApodError(true))
       // Una vez se ha solventado bien la solicitud de la api se quita la ventana de loading
       .finally(() => setApodLoading(false));
-  // Esta info es importante que se actualice cada vez que se cambia la fecha
+    // Esta info es importante que se actualice cada vez que se cambia la fecha
   }, [date]);
 
   // Invocamos el template de error si la api está saturada
@@ -64,7 +63,12 @@ function Astronomical() {
       {/* También aparecen video los cuales generan un problema de Cross-Origin Read Blocking
   (CORB), por ello se ha puesto una img por defecto con el URL al video */}
       {apod?.media_type === 'video' ? (
-        <a className="astronomical-video" href={apod?.url} target="_blank" rel="noopener noreferrer">
+        <a
+          className="astronomical-video"
+          href={apod?.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             className="astronomical-image"
             // Los videos están almacenados en Vimeo, por eso se pone como img el logo de esta web

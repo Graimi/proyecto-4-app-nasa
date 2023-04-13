@@ -1,14 +1,16 @@
 /* Damos formato al espacio de error */
-.error, .loading {
+.error,
+.loading {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   height: auto;
   min-height: 200px;
   gap: 20px;
 }
 
-/* Dejamos estilizada la imagen fija de error */
-.error img, .loading img {
+.error img,
+.loading img {
+  /* Dejamos estilizada la imagen fija de error */
   max-height: 25vh;
 }

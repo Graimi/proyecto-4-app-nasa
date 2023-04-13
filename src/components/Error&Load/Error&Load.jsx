@@ -1,6 +1,8 @@
-import './style.css';
+import './Error&Load.css';
 import React from 'react';
 
+// Todas las templates tienen la misma img de muestra,
+// para evitar repetir código se crea lo siguiente
 const ErrorImg = (
   <img
     src="https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png"
@@ -8,6 +10,19 @@ const ErrorImg = (
   />
 );
 
+// El proceso de llamada a la API y mostrar los datos tarda un rato,
+// para evitar una mala visualización se crea este template de carga
+export function Loading() {
+  return (
+    <div className="loading">
+      {ErrorImg}
+      <h2>Loading...</h2>
+    </div>
+  );
+}
+
+// El uso de esta API está limitada,
+// por ello se previene un error de muestra con el siguiente template
 export function ErrorApi() {
   return (
     <div className="error">
@@ -22,6 +37,8 @@ export function ErrorApi() {
   );
 }
 
+// El rover tiene un tiempo de misión determinado, para evitar mostrar un error
+// cuando este haya finalizado su misión se ha creado este tempplate
 export function ErrorActive(name) {
   return (
     <div className="error">
@@ -37,6 +54,8 @@ export function ErrorActive(name) {
   );
 }
 
+// Hay días que la API del rover no ha generado ninguna imagen, dándose un array vacio,
+// prevenimos el fallo creando el siguiente template para seleccionar otra fecha
 export function ErrorDate() {
   return (
     <div className="error">
