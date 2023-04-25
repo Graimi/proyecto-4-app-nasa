@@ -20,7 +20,7 @@ function App() {
       {/* En vez del Figure que pedía el enunciado he puesto lo siguiente */}
       {/* Según la info del prop se visualizará una pág u otra */}
       {toggle === 'ASTRONOMICAL' ? <Astronomical /> : <Rover />}
-      {Footer()}
+      <Footer />
     </div>
   );
 }

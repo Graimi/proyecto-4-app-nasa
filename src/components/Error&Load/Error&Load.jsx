@@ -3,20 +3,22 @@ import React from 'react';
 
 // Todas las templates tienen la misma img de muestra,
 // para evitar repetir código se crea lo siguiente
-function Image(img) {
-  return <img src={img} alt="Error" />;
+export function Image(props) {
+  return <img src={props.img} alt="Error" />;
 }
 
-const LoadingImg = 'https://res.cloudinary.com/dwsffp1eq/image/upload/v1681379260/NASA/cargando_yejwn0.png';
+const LoadingImg =
+  'https://res.cloudinary.com/dwsffp1eq/image/upload/v1681379260/NASA/cargando_yejwn0.png';
 
-const ErrorImg = 'https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png';
+const ErrorImg =
+  'https://res.cloudinary.com/dwsffp1eq/image/upload/v1680602958/NASA/error-404_mph6oc.png';
 
 // El proceso de llamada a la API y mostrar los datos tarda un rato,
 // para evitar una mala visualización se crea este template de carga
 export function Loading() {
   return (
     <div className="loading">
-      {Image(LoadingImg)}
+      <Image img={LoadingImg} />
       <h2>Loading...</h2>
     </div>
   );
@@ -27,7 +29,7 @@ export function Loading() {
 export function ErrorApi() {
   return (
     <div className="error">
-      {Image(ErrorImg)}
+      <Image img={ErrorImg} />
       <h2>
         El uso de esta API demostrativa está limitado
         <br />
@@ -40,13 +42,13 @@ export function ErrorApi() {
 
 // El rover tiene un tiempo de misión determinado, para evitar mostrar un error
 // cuando este haya finalizado su misión se ha creado este tempplate
-export function ErrorActive(name) {
+export function ErrorActive(props) {
   return (
     <div className="error">
-      {Image(ErrorImg)}
+      <Image img={ErrorImg} />
       <h2>
         Actualmente el rover&nbsp;
-        {name}
+        {props.name}
         &nbsp;no se encuentra activo
         <br />
         Puede deberse a un fallo del dispositivo o a que el Rover haya finalizado su misión
@@ -60,7 +62,7 @@ export function ErrorActive(name) {
 export function ErrorDate() {
   return (
     <div className="error">
-      {Image(ErrorImg)}
+      <Image img={ErrorImg} />
       <h2>
         No hay imágenes de esta fecha&nbsp;
         <br />

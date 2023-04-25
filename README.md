@@ -127,8 +127,8 @@ En la API de la NASA, podemos encontrar también una API muy parecida a la que h
 # CORRECCIONES
 ## Puntos a mejorar
 <ul>
-<li> [] Estás utilizando componentes como si fuese una función, recuerda que para cargar un componente de React debes hacerlo de la siguiente manera <NobreDelComponente />. </li> 
-<li> [] La línea 21 en el componente Header no tiene sentido que sea un article. </li>
+<li> [✅] Estás utilizando componentes como si fuese una función, recuerda que para cargar un componente de React debes hacerlo de la siguiente manera <NobreDelComponente />. ➡️ Problema encontrado y solucionado en App, Atronomical, Rover y Error&Load </li> 
+<li> [✅] La línea 21 en el componente Header no tiene sentido que sea un article. ➡️ Cambiado por div</li>
 </ul>
 
 ## Sugerencias de mejora

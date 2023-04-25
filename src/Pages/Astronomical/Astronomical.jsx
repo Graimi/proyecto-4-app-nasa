@@ -50,12 +50,12 @@ function Astronomical() {
 
   // Invocamos el template de error si la api está saturada
   if (apodError) {
-    return ErrorApi();
+    return <ErrorApi />;
   }
 
   // Invocamos el template de loading si la api no se ha cargado todavía
   if (apodLoading) {
-    return Loading();
+    return <Loading />;
   }
 
   return (
