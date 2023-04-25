@@ -81,7 +81,6 @@ https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
     - [✅] Una caja que contenga los detalles de la fecha y copyright que recibes en la respuesta de la API.
     - [✅] Un texto con la explicación acerca de la imagen, recibirás también este valor de la API.
 </ol>
-<br>
 
 ## Bonus: Mars Rover Photos 👽
 Esto es una tarea para l@s más valientes, si te ves con ganas de practicar más y usar un nuevo `state`, te animamos a que lo consigas para dominar React 💪. <br>
@@ -123,4 +122,55 @@ En la API de la NASA, podemos encontrar también una API muy parecida a la que h
 [✅] Rover <br>
 [✅] Footer <br>
 </ol>
+<br>
+
+# CORRECCIONES
+## Puntos a mejorar
+<ul>
+<li> [] Estás utilizando componentes como si fuese una función, recuerda que para cargar un componente de React debes hacerlo de la siguiente manera <NobreDelComponente />. </li> 
+<li> [] La línea 21 en el componente Header no tiene sentido que sea un article. </li>
+</ul>
+
+## Sugerencias de mejora
+<ul>
+<li> [] Recuerda que puedes acceder a las props realizando destructuring directamente en las props del componente. Ej: 
+
+    const Header = ({toggle, setToggle}) => {
+        ...
+    } </li> 
+<li> [] Lo interesante de los componentes es que sean lo más reutilizables posible. Si tengo un componente Header me interesaría poder utilizarlo en otra parte de la aplicación si se diese la situación. Eso podemos lograrlo haciéndolos lo más abstractos posibles pasándoles  las propiedades que queremos desde fuera del componente. Ej: 
+
+    import React from 'react';
+    import './Header.css';
+    
+    function Header({handleChange, link, img, title, subtitle}) {
+    
+      return (
+        <div className="header">
+          <a href={link.href} target={link.target} rel={link.rel}>
+            <img
+              className="nasaLogo"
+              src={img.src}
+              alt={img.alt}
+            />
+          </a>
+          <article className="categoryInfo">
+            <h1>{title}</h1>
+            <h2 className="category">{subtitle}</h2>
+          </article>
+          <label className="toggle" htmlFor="toggleButton">
+            <input
+              id="toggleButton"
+              type="checkbox"
+              onChange={handleChange}
+            />
+            <span className="slider" />
+          </label>
+        </div>
+      );
+    }
+    
+    export default Header;</li>
+<li> [] Debes tratar de eliminar la maxima lógica posible de los componentes y no dejar las llamadas a la API en el propio componente. Para ello lo separamos en otro archivo, por ejemplo en un directorio como services/api y simplemente realizar allí una función que realice la petición y obtenga los resultados. Así solo deberíamos llamarla en nuestro componente y recibiríamos los datos necesarios sin tener toda la lógica acoplada al componente. </li> 
+</ul>
 <br>
