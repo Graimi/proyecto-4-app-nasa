@@ -18,10 +18,10 @@ function Header(props) {
           alt="NASA LOGO"
         />
       </a>
-      <article className="categoryInfo">
+      <div className="categoryInfo">
         <h1>PICTURE OF THE DAY</h1>
         <h2 className="category">{toggle}</h2>
-      </article>
+      </div>
       <label className="toggle" htmlFor="toggleButton">
         <input
           id="toggleButton"
