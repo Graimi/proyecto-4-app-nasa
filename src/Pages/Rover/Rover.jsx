@@ -2,7 +2,7 @@
 import './Rover.css';
 import React, { useEffect, useState } from 'react';
 import { Loading, ErrorActive, ErrorApi, ErrorDate } from '../../components/Error&Load/Error&Load';
-import Api, { nasaApiKey, roverUrl } from '../../Services/Api';
+import Api, { nasaApiKey, roverUrl } from '../../components/Services/Api';
 
 function Rover() {
   // Con este State setearemos la fecha que querramos elegir

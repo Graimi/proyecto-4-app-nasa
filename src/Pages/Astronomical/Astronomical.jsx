@@ -1,7 +1,7 @@
 import './Astronomical.css';
 import React, { useEffect, useState } from 'react';
 import { Loading, ErrorApi } from '../../components/Error&Load/Error&Load';
-import Api, { nasaApiKey, astronomicalUrl } from '../../Services/Api';
+import Api, { nasaApiKey, astronomicalUrl } from '../../components/Services/Api';
 
 function Astronomical() {
   // Con la siguiente fórmula obtenemos el día de hoy

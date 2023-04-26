@@ -127,18 +127,18 @@ En la API de la NASA, podemos encontrar también una API muy parecida a la que h
 # CORRECCIONES
 ## Puntos a mejorar
 <ul>
-<li> [✅] Estás utilizando componentes como si fuese una función, recuerda que para cargar un componente de React debes hacerlo de la siguiente manera <NobreDelComponente />. ➡️ Problema encontrado y solucionado en App, Atronomical, Rover y Error&Load </li> 
+<li> [✅] Estás utilizando componentes como si fuese una función, recuerda que para cargar un componente de React debes hacerlo de la siguiente manera <NobreDelComponente />. ➡️ Problema encontrado y solucionado en App, Astronomical, Rover y Error&Load </li> 
 <li> [✅] La línea 21 en el componente Header no tiene sentido que sea un article. ➡️ Cambiado por div</li>
 </ul>
 
 ## Sugerencias de mejora
 <ul>
-<li> [] Recuerda que puedes acceder a las props realizando destructuring directamente en las props del componente. Ej: 
+<li> [] Recuerda que puedes acceder a las props realizando destructuring directamente en las props del componente. ➡️ He limpiado el docu del Header y quitado el state, a cambio este lo he almacenado en App pero no se como aplicar lo que me escribes, ¿está bien como lo he dejado o tengo que aplicar tu consejo? Ej: 
 
     const Header = ({toggle, setToggle}) => {
         ...
     } </li> 
-<li> [] Lo interesante de los componentes es que sean lo más reutilizables posible. Si tengo un componente Header me interesaría poder utilizarlo en otra parte de la aplicación si se diese la situación. Eso podemos lograrlo haciéndolos lo más abstractos posibles pasándoles  las propiedades que queremos desde fuera del componente. Ej: 
+<li> [✅] Lo interesante de los componentes es que sean lo más reutilizables posible. Si tengo un componente Header me interesaría poder utilizarlo en otra parte de la aplicación si se diese la situación. Eso podemos lograrlo haciéndolos lo más abstractos posibles pasándoles  las propiedades que queremos desde fuera del componente. ➡️ Realizado con Header y Footer Ej: 
 
     import React from 'react';
     import './Header.css';
@@ -171,6 +171,6 @@ En la API de la NASA, podemos encontrar también una API muy parecida a la que h
     }
     
     export default Header;</li>
-<li> [] Debes tratar de eliminar la maxima lógica posible de los componentes y no dejar las llamadas a la API en el propio componente. Para ello lo separamos en otro archivo, por ejemplo en un directorio como services/api y simplemente realizar allí una función que realice la petición y obtenga los resultados. Así solo deberíamos llamarla en nuestro componente y recibiríamos los datos necesarios sin tener toda la lógica acoplada al componente. </li> 
+<li> [✅] Debes tratar de eliminar la maxima lógica posible de los componentes y no dejar las llamadas a la API en el propio componente. Para ello lo separamos en otro archivo, por ejemplo en un directorio como services/api y simplemente realizar allí una función que realice la petición y obtenga los resultados. Así solo deberíamos llamarla en nuestro componente y recibiríamos los datos necesarios sin tener toda la lógica acoplada al componente. ➡️ Se han organizado las funciones básicas y URL de llamada en otro docu, ¿es necesario aplicar algún cambio a los useEffects? </li> 
 </ul>
 <br>
