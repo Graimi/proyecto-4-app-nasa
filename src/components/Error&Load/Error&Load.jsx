@@ -3,8 +3,8 @@ import React from 'react';
 
 // Todas las templates tienen la misma img de muestra,
 // para evitar repetir código se crea lo siguiente
-export function Image(props) {
-  return <img src={props.img} alt="Error" />;
+export function Image({ img }) {
+  return <img src={img.src} alt={img.alt} />;
 }
 
 const LoadingImg =
@@ -16,9 +16,11 @@ const ErrorImg =
 // El proceso de llamada a la API y mostrar los datos tarda un rato,
 // para evitar una mala visualización se crea este template de carga
 export function Loading() {
+  // const src = { src: LoadingImg };
+
   return (
     <div className="loading">
-      <Image img={LoadingImg} />
+      <Image img={{ src: LoadingImg, alt: 'Loading' }} />
       <h2>Loading...</h2>
     </div>
   );
@@ -29,7 +31,7 @@ export function Loading() {
 export function ErrorApi() {
   return (
     <div className="error">
-      <Image img={ErrorImg} />
+      <Image img={{ src: ErrorImg, alt: 'Error' }} />
       <h2>
         El uso de esta API demostrativa está limitado
         <br />
@@ -42,13 +44,13 @@ export function ErrorApi() {
 
 // El rover tiene un tiempo de misión determinado, para evitar mostrar un error
 // cuando este haya finalizado su misión se ha creado este tempplate
-export function ErrorActive(props) {
+export function ErrorActive(name) {
   return (
     <div className="error">
-      <Image img={ErrorImg} />
+      <Image img={{ src: ErrorImg, alt: 'Error' }} />
       <h2>
         Actualmente el rover&nbsp;
-        {props.name}
+        {name}
         &nbsp;no se encuentra activo
         <br />
         Puede deberse a un fallo del dispositivo o a que el Rover haya finalizado su misión
@@ -62,7 +64,7 @@ export function ErrorActive(props) {
 export function ErrorDate() {
   return (
     <div className="error">
-      <Image img={ErrorImg} />
+      <Image img={{ src: ErrorImg, alt: 'Error' }} />
       <h2>
         No hay imágenes de esta fecha&nbsp;
         <br />
