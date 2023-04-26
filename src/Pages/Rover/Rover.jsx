@@ -2,28 +2,7 @@
 import './Rover.css';
 import React, { useEffect, useState } from 'react';
 import { Loading, ErrorActive, ErrorApi, ErrorDate } from '../../components/Error&Load/Error&Load';
-
-// Creamos las funciones base para llamar a las apis
-
-async function getRoverGeneralData({ roverGeneralURL }) {
-  try {
-    const response = await fetch(roverGeneralURL);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    return error;
-  }
-}
-
-async function getRoverCuriosityData({ roverCuriosityUrl }) {
-  try {
-    const response = await fetch(roverCuriosityUrl);
-    const data = await response.json();
-    return data?.photos;
-  } catch (error) {
-    return error;
-  }
-}
+import Api, { nasaApiKey, roverUrl } from '../../Services/Api';
 
 function Rover() {
   // Con este State setearemos la fecha que querramos elegir
@@ -31,19 +10,12 @@ function Rover() {
   // a la más reciente disponible, por lo que no es necesario determinar ninguna fecha concreta
   const [date, setDate] = useState('');
 
-  // Almacenamos en una constante la URL de la NASA
-  const nasaUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/';
-
-  // Almacenamos en una constante nuestra API Key, esto es recomendable
-  // almacenarlo en una variable de entorno
-  const nasaApiKey = 'ENHD26eDky4QauvQ34xDNZwGCJvbAS3wZgusn6iS';
-
   // La API del rover es más complicada, se ha dividido en dos
   // Con esta primera URL se obtiene la info de todos los rovers, de aquí tb obtenemos el max_date
-  const roverGeneralURL = `${nasaUrl}?api_key=${nasaApiKey}`;
+  const roverGeneralURL = `${roverUrl}?api_key=${nasaApiKey}`;
 
   // Para no complicar todo demasiado se ha decidido usar solo la info del rover curiosity
-  const roverCuriosityUrl = `${nasaUrl}curiosity/photos?earth_date=${date}&api_key=${nasaApiKey}`;
+  const roverCuriosityUrl = `${roverUrl}curiosity/photos?earth_date=${date}&api_key=${nasaApiKey}`;
 
   // Seteamos la info de la api general
   const [generalInfo, setGeneralInfo] = useState({});
@@ -60,7 +32,9 @@ function Rover() {
   const [curiosityInfoLoading, setCuriosityInfoLoading] = useState(true);
 
   useEffect(() => {
-    getRoverGeneralData({ roverGeneralURL })
+    // Llamamos a la función Api
+    Api(roverGeneralURL)
+    // getRoverGeneralData({ roverGeneralURL })
       .then((data) => {
         // Obtenemos la info de la api general
         // El 0 corresponde al primer rover, en este caso el curiosity
@@ -76,9 +50,11 @@ function Rover() {
   }, []);
 
   useEffect(() => {
-    getRoverCuriosityData({ roverCuriosityUrl })
-      // Obtenemos la info de la api del rover curiosity
-      .then((data) => setCuriosityInfo(data))
+    // Llamamos a la función Api, en este caso hay que declarar true para añadir la coletilla a data
+    Api(roverCuriosityUrl, true)
+      .then((data) => {
+        setCuriosityInfo(data);
+      })
       // Si aparece un error damos valor positivo al state
       .catch(() => setCuriosityInfoError(true))
       // Una vez se ha solventado bien la solicitud de la api se quita la ventana de loading

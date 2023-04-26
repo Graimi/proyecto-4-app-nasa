@@ -1,17 +1,7 @@
 import './Astronomical.css';
 import React, { useEffect, useState } from 'react';
 import { Loading, ErrorApi } from '../../components/Error&Load/Error&Load';
-
-// Creamos la función base para llamar a la api
-async function getApodData({ apodUrl }) {
-  try {
-    const response = await fetch(apodUrl);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    return error;
-  }
-}
+import Api, { nasaApiKey, astronomicalUrl } from '../../Services/Api';
 
 function Astronomical() {
   // Con la siguiente fórmula obtenemos el día de hoy
@@ -20,15 +10,8 @@ function Astronomical() {
   // Con este State setearemos la fecha que querramos elegir
   const [date, setDate] = useState(today);
 
-  // Almacenamos en una constante la URL de la NASA
-  const nasaUrl = 'https://api.nasa.gov/';
-
-  // Almacenamos en una constante nuestra API Key, esto es recomendable
-  // almacenarlo en una variable de entorno
-  const nasaApiKey = 'ENHD26eDky4QauvQ34xDNZwGCJvbAS3wZgusn6iS';
-
   // Creamos la URL para la APOD
-  const apodUrl = `${nasaUrl}planetary/apod?date=${date}&api_key=${nasaApiKey}`;
+  const apodUrl = `${astronomicalUrl}planetary/apod?date=${date}&api_key=${nasaApiKey}`;
 
   // Seteamos la info de la api apod
   const [apod, setApod] = useState({});
@@ -38,7 +21,8 @@ function Astronomical() {
   const [apodLoading, setApodLoading] = useState(true);
 
   useEffect(() => {
-    getApodData({ apodUrl })
+    // Llamamos a la función Api
+    Api(apodUrl)
       // Obtenemos la info de la api del rover curiosity
       .then((data) => setApod(data))
       // Si aparece un error damos valor positivo al state
