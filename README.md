@@ -1,8 +1,12 @@
 # APP NASA
 
-## <a href="https://www.notion.so/graimi/Proyecto-4-App-NASA-e1c8dc09bd08495f97724a206dd114ee?pvs=4">PROYECTO 4: APP NASA 🛰️</a>
-## Descripción
+## <a href="https://www.notion.so/graimi/Proyecto-4-App-NASA-e1c8dc09bd08495f97724a206dd114ee?pvs=4">PROYECTO 4: APP NASA 🛰️ - FINALIZADO</a>
+
+## - Descripción
 En este proyecto vamos a crear una aplicación web con Vite y React consumiendo una de las API’s oficiales de la NASA con la que podremos consultar la fotografía astronómica del día. <br>
+
+## - Despliegue
+<a href="https://legendary-druid-275542.netlify.app/">ENLACE</a> DE VISUALIZACIÓN
 <br>
 
 ## Requerimentos
@@ -14,7 +18,7 @@ En este proyecto vamos a crear una aplicación web con Vite y React consumiendo 
 <li> [✅] El input debe estar limitado para que no pueda elegir una fecha mayor a la de hoy. </li> 
 <li> [✅] Si no es el caso y me permite elegir una fecha mayor, debo poder ver un mensaje en pantalla avisándome de que No hay fotografía disponible. </li> 
 <li> [✅] La llamada a la API no debe haber ocurrido si me permite elegir una fecha mayor a la de hoy. </li> 
-<li> [] Bonus: Tengo disponible un input de tipo select que me permite elegir entre las APIs APOD y Mars Rover Photos, de forma que puedo ver imágenes de ambos casos. </li> 
+<li> [✅] Bonus: Tengo disponible un input de tipo select que me permite elegir entre las APIs APOD y Mars Rover Photos, de forma que puedo ver imágenes de ambos casos. </li> 
 </ul>
 <br>
 
@@ -72,8 +76,6 @@ https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
 
 <li> [✅] Ahora tu trabajo será crear un `useEffect` en el componente App para pedir los datos APOD de la API. Analiza bien su formato y la información que llega, porque tendrás que conseguir lo siguiente: </li>
 
-- [] Un título que diga: “Imagen astronómica del día”.
-- [] Un mensaje que diga: “Esta imagen corresponde con la fecha **{valor_de_tu_estado_date}**”.
 - [✅] Un input para cambiar la fecha del estado date que hiciste antes con el código que te recomendamos usar.
 - [✅] Un componente aparte, llámalo `Figure` o similar, que reciba props con el valor recibido de la API APOD de la NASA de forma que puedas renderizar:
     - [✅] Una imagen con la imagen del día de la NASA.
