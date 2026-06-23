@@ -6,7 +6,7 @@
 En este proyecto vamos a crear una aplicación web con Vite y React consumiendo una de las API’s oficiales de la NASA con la que podremos consultar la fotografía astronómica del día. <br>
 
 ## - Despliegue
-<a href="https://legendary-druid-275542.netlify.app/">ENLACE</a> DE VISUALIZACIÓN
+<a href="https://boxeoceres.netlify.app/">ENLACE</a> DE VISUALIZACIÓN
 <br>
 
 ## Requerimentos
